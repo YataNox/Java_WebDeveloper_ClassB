@@ -20,5 +20,16 @@ public class Println01
 		// 자바에서는 + 연산자를 문자들의 또는 데이터들의 이어붙이기(결합)
 		// 으로도 사용할 수 있습니다.
 		System.out.println("10" + "5");
+		System.out.println("10" + 5);
+		System.out.println(10 + "5");
+		System.out.println(10 + 5);
+		System.out.println("Hello " + "World~!");
+		// 10 + 5 = 15를 출력하고 싶을 때
+		System.out.println(10 + " + " + 5 + " = " + (10+5) );
+		System.out.println("10 + 5" + " = " + (10+5) );
+		System.out.println("10 + 5 = " + (10+5) );
+		System.out.println("10 + 5 = 1" + 5);
+		System.out.println("10 + 5 = 15");
+		
 	}
 }
