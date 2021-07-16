@@ -12,5 +12,13 @@ public class Println01
 		System.out.println(10); // 10 출력
 		System.out.println(12.123); // 12.123출력
 		System.out.println("Java Programming"); // 문자 출력
+		
+		// 100 - 숫자(정수) "100" - 문자
+		System.out.println(100);
+		System.out.println("100"); //
+		
+		// 자바에서는 + 연산자를 문자들의 또는 데이터들의 이어붙이기(결합)
+		// 으로도 사용할 수 있습니다.
+		System.out.println("10" + "5");
 	}
 }
