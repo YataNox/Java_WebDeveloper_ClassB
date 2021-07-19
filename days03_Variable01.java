@@ -26,5 +26,9 @@ public class Variable01
 		// 8. 두 가지 의미의 단어가 조합되어 변수 이름이 만들어 진다면 첫 단어는 소문자로,
 		// 두 번째 단어 첫 글자 대문자로 생성합니다.
 		// ex) 덧셈의 결과를 저장할 변수 이름 : plusReslut
+		
+		int a;
+		int b;
+		int plusResult, minusResult, mutiplyResult; // 한 번에 여러 변수를 생성
 	}
 }
