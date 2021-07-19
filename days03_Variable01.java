@@ -27,8 +27,50 @@ public class Variable01
 		// 두 번째 단어 첫 글자 대문자로 생성합니다.
 		// ex) 덧셈의 결과를 저장할 변수 이름 : plusReslut
 		
-		int a;
-		int b;
+		int a; // a라는 이름의 변수를 생성(정수를 저장하기 위한 변수)
+		int b; // b라는 이름의 변수를 생성(정수를 저장하기 위한 변수)
 		int plusResult, minusResult, mutiplyResult; // 한 번에 여러 변수를 생성
+		double divideResult; //divideResult라는 이름의 변수 생성(실수를 저장할 변수)
+		
+		// a = 10.125; // 에러
+		divideResult = 100;
+		
+		// boolean - '참/거짓' 진위형 변수 1Byte
+		boolean b1;
+		b1 = true;
+		System.out.printf("변수 b1의 값 : %b\n", b1);
+		System.out.println("변수 b1의 값 : " + b1);
+		// int - 정수형 자료형 1, 4Byte형 정수
+		// long - 정수형 자료형 2, 8Byte형 정수
+		// float - 실수형 자료형 1, 4Byte형 실수
+		// double - 실수형 자료형 2, 8Byte형 실수
+		// char - 문자형 자료형 1, 글자형 자료 'a', 'b' , 2Byte
+		char c;
+		c = 'A';
+		System.out.printf("변수 c의 값 : %c\n", c);
+		System.out.println("변수 c의 값 : " + c);
+		// int - 정수형 자료형 1, 4Byte형 정수
+		// String - 문자열 자료형 : 현재는 자료형이라고 부르지만 엄밀히 자료형은 아니며
+		// 				이후 객체 단원에서 자세히 학슬할 예정입니다.
+		//				지금은 그냥 여러 문자를 하나의 자료로 저장할 수 잇는 자료형으로 이해하면
+		//				됩니다.
+		// 문자열 : "a", "Abc", "aBCD", ""
+		
+		// 변수에 값을 대입하고 연산한 결과를 다른 변수에 저장합니다.
+		a = 15;
+		b = 11;
+		plusResult = a + b;
+		minusResult = a - b;
+		mutiplyResult = a * b;
+		System.out.printf("%d + %d = %d\n",a, b, plusResult);
+		System.out.printf("%d + %d = %d\n",a, b, minusResult);
+		System.out.printf("%d + %d = %d\n",a, b, mutiplyResult);
+		System.out.println(a + "+" + b + "=" + plusResult);
+		System.out.println(a + "-" + b + "=" + minusResult);
+		System.out.println(a + "*" + b + "=" + mutiplyResult);
+		
+		divideResult = a / (double)b;
+		System.out.printf("%d ÷ %d = %d\n", a, b, divideResult);
+		System.out.println(a + "÷" + b + "=" + divideResult);
 	}
 }
