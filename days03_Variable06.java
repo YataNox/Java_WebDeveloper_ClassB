@@ -36,6 +36,8 @@ public class Variable06
 		// v3 변수가 생성되었으므로 아래 코드는 정상 실행
 		System.out.printf("v3 변수의 값 %d\n", v3);
 
-		
+		//변수는 선언 이후라도 값이 대입되지 않으면 사용이 불가합니다.
+		int v4;
+		//System.out.printf("v4 변수의 값 %d\n", v4); // 오류
 	}
 }
