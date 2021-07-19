@@ -30,6 +30,6 @@ public class Variable02
 		System.out.printf("%d x %d = %d\n", num1, num2, result1);
 		
 		result2 = num1 / (double)num2; //나눗셈의 결과 저장
-		System.out.printf("%d ÷ %d = %.1f\n", num1, num2, result2);
+		System.out.printf("%d ÷ %d = %.1f\n", num1, num2, result2);//
 	}
 }
