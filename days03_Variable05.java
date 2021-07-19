@@ -26,7 +26,7 @@ public class Variable05
 		
 		//총점, 평균 값 계산
 		total = kor + eng + mat;
-		avg = total / 3;
+		avg = total / 3.0;
 		
 		//이름부터 평균까지의 값 출력
 		System.out.println("--------------------------------------------");
