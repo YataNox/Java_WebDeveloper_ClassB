@@ -38,6 +38,9 @@ public class Variable06
 
 		//변수는 선언 이후라도 값이 대입되지 않으면 사용이 불가합니다.
 		int v4;
+		//아래 코드는 v4 변수값이 하나도 저장되지 않았기 때문에 오류를 발생합니다.
 		//System.out.printf("v4 변수의 값 %d\n", v4); // 오류
+		v4 = 40;
+		System.out.printf("v4 변수의 값 %d\n",v4);
 	}
 }
