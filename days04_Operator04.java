@@ -20,5 +20,20 @@ public class Operator04
 		System.out.printf("T && F = %b\n", true && false);
 		System.out.printf("F && T = %b\n", false && true);
 		System.out.printf("T && T = %b\n", true && true);
+		
+		//OR 연산자(||)
+		// 좌항과 관계식 또는 boolean 값이 하나라도 결과가 true인 경우 true가 결과 값
+		// 좌항과 우항 모두 false 경우 false가 결과 값
+		// 좌항의 결과가 true인 경우 우항의 식을 비교하지 않습니다.
+		System.out.printf("F || F = %b\n", false || false);
+		System.out.printf("T || F = %b\n", true || false);
+		System.out.printf("F || T = %b\n", false || true);
+		System.out.printf("T || T = %b\n", true || true);
+		
+		//NOT 연산자(!)
+		// 단항연산자(피연산자가 1개임)
+		// 관계식의 결과를 반대값으로 결과를 냄 true -> false, false -> true
+		System.out.printf("!%b = %b\n", false, !false);
+		System.out.printf("!%b = %b\n", true, !true);
 	}
 }
