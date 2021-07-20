@@ -46,5 +46,14 @@ public class Operator03
 		// 크다 작다를 판단해주는 compareTo()
 		// 같다 다르다를 판단해주는 equals()
 		// String 자료간의 비교는 대부분 위의 두 함수를 이용합니다.
+		
+		int r = s1.compareTo(s2);
+		// s1이 크면 양수를 , s2가 크면 음수를 발생. & 변수 r에 저장,같으면 0이 발생
+		// 앞 글자(s1)에서 뒷 글자(s2)의 아스키 코드값을 뺀 값(정수)을 결과로 얻음
+		System.out.printf("%s > %s => %d\n",s1, s2, r);
+		r = s2.compareTo(s1);
+		System.out.printf("%s > %s => %d\n",s1, s2, r);
+		boolean b = s1.equals(s2);
+		System.out.printf("%s == %s => %b\n",s1, s2, b);
 	}
 }
