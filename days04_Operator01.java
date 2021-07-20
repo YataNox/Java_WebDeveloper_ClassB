@@ -36,9 +36,9 @@ public class Operator01
 		 // 캐스트 연산은 서로 호환이 가능한 자료끼리만 사용가능합니다.
 		 // 올바른 예(실수 -> 정수)
 		 double d1 = 1.23456;
-		 int a = (int)d1;
+		 int a = (int)d1; // a 변수에 1이 저장
 		 // 올바른 예(정수 -> 실수)
-		 double d2 = (double)a;
+		 double d2 = (double)a; // d2 변수에 1.0이 저장
 		 
 		 // 잘못된 예(문자 - > 숫자)
 		 // String str = "12346";
