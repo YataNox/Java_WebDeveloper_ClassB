@@ -35,5 +35,17 @@ public class Operator04
 		// 관계식의 결과를 반대값으로 결과를 냄 true -> false, false -> true
 		System.out.printf("!%b = %b\n", false, !false);
 		System.out.printf("!%b = %b\n", true, !true);
+		
+		// 점수가 80점 이상이면서 90점 이하면 true, 아니면 false 출력( 이면서, 그리고 ~이고)
+		int number = 80;
+		boolean result = number >=80 && number <= 90;
+		// result = 80 <= number <= 90 X 오류
+		System.out.printf("result = %b\n", result);
+		
+		//점수가 100이상이거나 50미만이면 true, 아니면 false( 이거나, 또는)
+		number = 150;
+		result = number >= 100 || number < 50;
+		//result = 100 >= number < 50 X 오류
+		System.out.printf("result = %b\n", result);
 	}
 }
