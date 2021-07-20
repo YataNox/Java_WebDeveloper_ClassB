@@ -48,7 +48,7 @@ public class Operator04
 		// result = 100 >= number < 50 X 오류
 		System.out.printf("result = %b\n", result);
 		
-		int kor = 88, eng = 78, mat = 95;
+		int kor = 87, eng = 78, mat = 95;
 		double avg;
 		// 평균이 80이상이면서 영어 점수가 75점 이상이면 true 출력, 아니면 false 출력
 		avg = (kor + eng + mat) / 3.0;
@@ -65,6 +65,10 @@ public class Operator04
 		
 		// 평균 60 이상 모든 과목 40 이상이라면 true, 아니면 false
 		result = avg >= 60 && (kor >= 40) && (eng >= 40) && (mat >= 40);
+		System.out.printf("result = %b\n", result);
+		
+		// 국어점수가 짝수이면 true, 홀수이면 false
+		result = (kor % 2 == 0);
 		System.out.printf("result = %b\n", result);
 	}
 }
