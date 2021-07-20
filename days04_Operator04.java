@@ -42,10 +42,29 @@ public class Operator04
 		// result = 80 <= number <= 90 X 오류
 		System.out.printf("result = %b\n", result);
 		
-		//점수가 100이상이거나 50미만이면 true, 아니면 false( 이거나, 또는)
+		// 점수가 100이상이거나 50미만이면 true, 아니면 false( 이거나, 또는)
 		number = 150;
 		result = number >= 100 || number < 50;
-		//result = 100 >= number < 50 X 오류
+		// result = 100 >= number < 50 X 오류
+		System.out.printf("result = %b\n", result);
+		
+		int kor = 88, eng = 78, mat = 95;
+		double avg;
+		// 평균이 80이상이면서 영어 점수가 75점 이상이면 true 출력, 아니면 false 출력
+		avg = (kor + eng + mat) / 3.0;
+		result = (avg >= 80) && (eng >= 75);
+		System.out.printf("result = %b\n", result);
+		
+		// 국어 : 50 이상, 영어 : 60 이상, 수학 : 70 이상이면 true, 아니면 false;
+		result = (kor >= 50) && (eng >= 60) && (mat >= 70);
+		System.out.printf("result = %b\n", result);
+		
+		// 세과목 중 한 과목이라도 40 미만이면 true, 모두 40 이상이라면 false
+		result = (kor < 40) || (eng < 40) || (mat <40);
+		System.out.printf("result = %b\n", result);
+		
+		// 평균 60 이상 모든 과목 40 이상이라면 true, 아니면 false
+		result = avg >= 60 && (kor >= 40) && (eng >= 40) && (mat >= 40);
 		System.out.printf("result = %b\n", result);
 	}
 }
