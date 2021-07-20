@@ -58,5 +58,9 @@ public class Operator04
 		// 국어 : 50 이상, 영어 : 60 이상, 수학 : 70 이상이면 true, 아니면 false;
 		result = (kor >= 50) && (eng >= 60) && (mat >= 70);
 		System.out.printf("result = %b\n", result);
+		
+		// 세과목 중 한 과목이라도 40 미만이면 true, 모두 40 이상이라면 false
+		result = (kor < 40) || (eng < 40) || (mat <40);
+		System.out.printf("result = %b\n", result);
 	}
 }
