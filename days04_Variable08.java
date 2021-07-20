@@ -52,7 +52,11 @@ public class Operator04
 		double avg;
 		// 평균이 80이상이면서 영어 점수가 75점 이상이면 true 출력, 아니면 false 출력
 		avg = (kor + eng + mat) / 3.0;
-		result = avg >= 80 && eng >= 75;
+		result = (avg >= 80) && (eng >= 75);
+		System.out.printf("result = %b\n", result);
+		
+		// 국어 : 50 이상, 영어 : 60 이상, 수학 : 70 이상이면 true, 아니면 false;
+		result = (kor >= 50) && (eng >= 60) && (mat >= 70);
 		System.out.printf("result = %b\n", result);
 	}
 }
