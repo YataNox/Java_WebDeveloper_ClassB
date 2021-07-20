@@ -16,6 +16,7 @@ public class Operator03
 		
 		// %b : printf에서 boolean 타입의 값을 출력하는 이스케이프 문자
 		result = n1 > n2;
+		
 		System.out.printf("%d > %d -> %b\n", n1, n2, result);
 		result = n1 < n2;
 		System.out.printf("%d < %d -> %b\n", n1, n2, result);
@@ -28,5 +29,22 @@ public class Operator03
 		result = n1 != n2;
 		System.out.printf("%d != %d -> %b\n", n1, n2, result);
 		
+		// 문자(char) 데이터의 비교 : 각 데이터가 갖는 아스키 코드값으로 비교
+		char c1 = 'A', c2 = 'B';
+		result = c1 > c2;
+		System.out.printf("%c > %c -> %b\n", c1, c2, result);
+		result = c1 < c2;
+		System.out.printf("%c < %c -> %b\n", c1, c2 ,result);
+		
+		// String 데이터의 비교
+		String s1 = "1234", s2 = "987";
+		// s1과 s2는 String 자료형이며, 다른 자료형과 다르게 이 두 변수가
+		// 직접 문자들을 저장하고 있지 않습니다.
+		// 문자들은 별도의 장소에 저장되고, 변수는 저장 위치값만 저장하고 있습니다.
+		// 따라서 변수들간의 비교(s1>s2)는 위치 정보의 비교이므로 의미가 없습니다.
+		
+		// 크다 작다를 판단해주는 compareTo()
+		// 같다 다르다를 판단해주는 equals()
+		// String 자료간의 비교는 대부분 위의 두 함수를 이용합니다.
 	}
 }
