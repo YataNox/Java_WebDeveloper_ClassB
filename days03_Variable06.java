@@ -42,5 +42,11 @@ public class Variable06
 		//System.out.printf("v4 변수의 값 %d\n", v4); // 오류
 		v4 = 40;
 		System.out.printf("v4 변수의 값 %d\n",v4);
+		
+		// 변수의 값은 여러번 대입할 수 있으며 저장되는 값은 가장 최근
+		// 마지막에 저장한 값이 저장되어 사용됩니다.
+		// 그 이전에 저장되는 값은 소멸 - 한 번에 하나씩만 저장할 수 있는 단점이 있음
+		n1 = 60;
+		System.out.println("프로그램 시작 n1 변수의 값 : " + n1);
 	}
 }
