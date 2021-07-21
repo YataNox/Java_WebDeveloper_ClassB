@@ -38,7 +38,7 @@ public class ControllOpif05
 			System.out.println("D학점");
 		else
 			System.out.println("F학점");
-		
+		sc.close();
 		// if(){}, else if(){}에서 괄호() 안에는
 		// 해당 구문에 해당하는 명령{}을 실행할지, 건너뛰고 실행하지 않을지를
 		// 결정할 관계(비교) 연산식 또는 boolean 값이 들어갑니다.
