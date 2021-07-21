@@ -25,6 +25,6 @@ public class ControllOpif07
 			total = pay * 1.15;
 		
 		System.out.println("총 지급액 : " + total + "원");
+		sc.close();
 	}
 }
-
