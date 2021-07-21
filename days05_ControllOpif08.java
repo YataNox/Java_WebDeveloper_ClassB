@@ -42,5 +42,6 @@ public class ControllOpif08
 			if (mat < 40.0)
 				System.out.print("(수학 과락)");
 		}
+		sc.close();
 	}
 }
