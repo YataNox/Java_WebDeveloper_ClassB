@@ -29,5 +29,11 @@ public class ControllOpif02
 			System.out.println("합격");
 		else 
 			System.out.println("불합격");
+	
+		// 평균 60이상 모든 과목 40 이상이라면 합격, 아니면 불합격
+		if(avg >= 60 && eng >= 80.0)
+			System.out.println("합격");
+		else 
+			System.out.println("불합격");
 	}
 }
