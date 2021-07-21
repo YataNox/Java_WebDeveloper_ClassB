@@ -23,8 +23,11 @@ public class ControllOpif07
 			total = pay * 1.25;
 		else if(level.equals("사원"))
 			total = pay * 1.15;
+		else
+			System.out.println("잘못된 직급입니다.");
 		
 		System.out.println("총 지급액 : " + total + "원");
 		sc.close();
 	}
+	
 }
