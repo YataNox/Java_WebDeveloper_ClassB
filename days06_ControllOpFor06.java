@@ -13,6 +13,7 @@ public class ControllOpFor06
 		System.out.printf("출력할 팩토리얼을 입력하세요 : ");
  		k = sc.nextInt();
 		
+ 		System.out.printf("%d! = ", k);
 		for(i = 1; i <= k; i++) 
 		{
 			fact *= i;
