@@ -19,5 +19,6 @@ public class ControllOpFor04
 		for(int num = 1; num<10; num++)
 			System.out.printf("%d x %d = %d\n", dan, num, dan*num);
 			//System.out.println(dan + "x" + num + "=" +dan*num);
+		sc.close();
 	}
 }
