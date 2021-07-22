@@ -41,7 +41,8 @@ public class ControllOpSwitch01
 				System.out.println("4을 입력하셨습니다."); break;
 			case 5: // num 변수 값이 5일 때 실행하는 명령이 쓰여지는 곳
 				System.out.println("5을 입력하셨습니다."); break;
-		}
+		} // 단점 : 해당 case만 실행하는 것이 아니라 아랫쪽 case를 모두 실행합니다.
+		// 아래 case를 모두 실행하는 단점을 보완하기 위해 각 case에 break를 추가
 		
 		sc.close();
 	}
