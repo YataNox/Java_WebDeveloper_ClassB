@@ -25,5 +25,44 @@ public class ControllOpFor17
 				count = 0;
 			}
 		}
+		/*
+		 for(int i = 1; i <= 100; i++)
+		{
+			for(int j = 2; j < i; j++)
+			{
+				if(i % j == 0)
+					count++;
+			}
+			if(count == 0)
+			{
+				System.out.printf("%d ", i);
+				count = 0;
+			}
+			else
+			{
+				count = 0;
+			}
+		}
+		*/
+		/*
+		 for(int i = 2; i <= 100; i++)
+		{
+			for(int j = 2; j < i/2; j++)
+			{
+				if(i % j == 0)
+					count++;
+			}
+			if(count == 0)
+			{
+				System.out.printf("%d ", i);
+				count = 0;
+			}
+			else
+			{
+				count = 0;
+			}
+		}
+		*/
+		//제곱근 사용해도 가능
 	}
 }
