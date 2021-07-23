@@ -7,7 +7,8 @@ public class ControllOpFor16
 		for(int i = 1; i <= 10; i++)
 		{
 			for(int j = 1; j <= 10; j++)
-				System.out.printf("#");
+				if(i >= j)
+					System.out.printf("#");
 			System.out.println();
 		}
 	}
