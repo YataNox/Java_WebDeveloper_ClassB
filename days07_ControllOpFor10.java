@@ -11,9 +11,9 @@ public class ControllOpFor10
 		
 		int num, sum = 0;
 		
+		System.out.print("정수들을 입력하세요 : ");
 		for(int i = 0; i < 10; i++)
 		{
-			System.out.print("정수를 입력하세요 : ");
 			num = sc.nextInt();
 			sum += num;
 		}
