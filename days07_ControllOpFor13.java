@@ -20,7 +20,7 @@ public class ControllOpFor13
 			start = num1;
 		else 
 			start = num2;
-		
+		i / (i/start)
 		for(int i = start; i <= num1*num2; i++)
 			if(i % num1 == 0 && i%num2 == 0) 
 			{
@@ -28,6 +28,11 @@ public class ControllOpFor13
 				if(k == 0)
 					k = i;
 			}
+		/*
+		 for(int i = num1*num2; i>=start; i--)
+		 	if( i%num1 == 0 && i%num2 == 0)
+		 		k = i;
+		 */
 		System.out.println("\n최소 공배수는 : " + k);
 		sc.close();
 	}
