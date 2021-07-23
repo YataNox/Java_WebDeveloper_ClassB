@@ -41,12 +41,27 @@ public class ControllOpFor16
 			for(int j = 1; j <= 10; j++) 
 			{
 				if(j>=i)
-					System.out.printf("*");
+					System.out.printf("#");
 				else
 					System.out.printf(" ");
 			}
 			System.out.println();
 		}
 		 * */
+		System.out.println();
+		//-------------------------------------------------------------------------------
+		//삼각형 2
+		for(int i = 1; i <= 10; i++)
+		{
+			for(int j = 10; j >= 1; j--)
+			{
+				if(j > i)
+					System.out.printf(" ");
+				else
+					
+					System.out.printf("#");
+			}
+			System.out.println();
+		}
 	}
 }
