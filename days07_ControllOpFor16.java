@@ -28,7 +28,7 @@ public class ControllOpFor16
 			for(int j = 10; j >= 1; j--) 
 			{
 				if(i >= j)
-					System.out.printf("*");
+					System.out.printf("#");
 				else
 					System.out.printf(" ");
 			}
