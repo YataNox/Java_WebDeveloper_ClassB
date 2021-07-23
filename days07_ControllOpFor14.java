@@ -8,14 +8,17 @@ public class ControllOpFor14
 	{
 		Scanner sc = new Scanner(System.in);
 		
-		//이중 반복문
-		for(int i = 0; i <= 10; i++) 
+		// 이중 반복문
+		for(int i = 1; i <= 10; i++) 
 		{
-			for(int j = 0; j <= 10; j++)
+			for(int j = 1; j <= 10; j++) 
+			{
+				// System.out.printf("#");
 				System.out.printf("(%d, %d) ", i, j);
-			
+			}
 			System.out.println();
 		}
 		
+		sc.close();
 	}
 }
