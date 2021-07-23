@@ -13,11 +13,17 @@ public class ControllOpFor09
 		 System.out.print("정수를 입력하세요 : ");
 		 int num1 = sc.nextInt();
 		 
-		 for(int i = 2; i <= num1; i++)
-		 {
-			 if(i % 2 == 0)
+		 for(int i = 2; i <= num1; i=i+2)
 				 sum += i;
+		 
+		/* 
+		 for(int i = 1; i <=num1; i++)
+		 {
+			 if(i%2 ==1)
+				 continue; // 반복 실행 1회가 끝나기 전에 다음 반복으로 이동
+			 sum += i;
 		 }
+		 */
 		 System.out.println("2부터 " + num1 + "까지의 짝수 합은 " + sum + "입니다.");
 		 sc.close();
 	}
