@@ -63,5 +63,30 @@ public class ControllOpFor16
 			}
 			System.out.println();
 		}
+		System.out.println();
+		//-------------------------------------------------------------------------------
+		// 피라미드
+		for(int i = 1; i <= 10; i++)
+		{
+			for(int j = 10; j >= 1; j--)
+			{
+				if(j >= i)
+					System.out.printf(" ");
+			}
+			for(int j = 1; j <= 2*i-1; j++)
+					System.out.printf("#");
+			System.out.println();
+		}
+		/*
+		 for(int i = 1; i<=10; i++)
+		 {
+		 	for(int j = 1; j<=9+i; j++)
+		 	{
+		 		if( j>=11-i) System.out.printf("#");
+		 		else System.out.printf(" ");
+		 	}
+		 	System.out.println();
+		 }
+		 * */
 	}
 }
