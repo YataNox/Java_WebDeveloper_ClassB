@@ -52,5 +52,6 @@ public class ControllOpWhile01
 			k++;
 			if( k > 10) break;
  		} 
+		sc.close();
 	}
 }
