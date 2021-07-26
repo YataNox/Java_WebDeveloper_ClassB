@@ -25,6 +25,7 @@ public class ControllOpWhile05
 		System.out.printf("-------------------------------------------------\n");
 		while(i <= std) 
 		{
+			System.out.println(i + "번 학생");
 			while(j <= k) 
 			{
 				System.out.printf("과목 점수 입력 : ");
@@ -32,11 +33,13 @@ public class ControllOpWhile05
 				tot += num;
 				j++;
 			}
+			
 			avg = tot / k;
 			System.out.printf("%d/\t%d/\t%.1f/\t\n", i, tot, avg);
 			System.out.printf("-------------------------------------------------\n");
-			i++;
 			j = 1;
+			tot = 0;
+			i++;
 		}
 		sc.close();
 	}
