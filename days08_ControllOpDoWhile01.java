@@ -1,5 +1,7 @@
 package days08;
 
+import java.util.Scanner;
+
 public class ControllOpDoWhile01 
 {
 	public static void main(String args[])
@@ -39,5 +41,14 @@ public class ControllOpDoWhile01
 		do {} while(조건); O
 		do에 속한 {}안의 명령을 한 번 먼저 실행 후 조건을 확인합니다.
 		*/
+		
+		Scanner sc = new Scanner(System.in);
+		int input;
+		do {
+			System.out.printf("정수를 입력 : ");
+			input = sc.nextInt();
+		}while(input != 100);
+		System.out.println("프로그램 종료");
+		sc.close();
 	}
 }
