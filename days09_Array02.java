@@ -24,5 +24,20 @@ public class Array02
 		// 크기가 5인 배열을 생성하면서, 각 요소의 값을 1,2,3,4,5로 초기화하는 코드
 		int [] arr3 = new int[] {1,2,3,4,5};
 		System.out.println(arr3[0] + " " + arr3[1] + " " + arr3[2] + " " + arr3[3] + " " + arr3[4]);
+		int [] arr4 = {5,4,3,2,1};
+		System.out.println(arr4[0] + " " + arr4[1] + " " + arr4[2] + " " + arr4[3] + " " + arr4[4]);
+		arr4[0] = 100;
+		System.out.println(arr3[0] + " " + arr4[0]);
+		
+		// 4. 배열 변수 arr5, arr6을 선언하는 코드
+		int [] a5, a6;
+		a5 = new int [3];
+		a6 = new int [3];
+		
+		// 5. 배열 변수 arr7, arr8, 일반 int 형 변수 arr9를 생성하는 코드
+		int a7[], a8[], a9;
+		a7 = new int[3];
+		a8 = new int[3];
+		a9 = 10;
 	}
 }
