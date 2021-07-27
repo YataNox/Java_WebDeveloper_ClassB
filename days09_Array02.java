@@ -22,12 +22,12 @@ public class Array02
 				
 		// 3. 배열을 생성하면서 임의의 값으로 초기화하는 방법
 		// 크기가 5인 배열을 생성하면서, 각 요소의 값을 1,2,3,4,5로 초기화하는 코드
-		int [] arr3 = new int[] {1,2,3,4,5};
-		System.out.println(arr3[0] + " " + arr3[1] + " " + arr3[2] + " " + arr3[3] + " " + arr3[4]);
-		int [] arr4 = {5,4,3,2,1};
-		System.out.println(arr4[0] + " " + arr4[1] + " " + arr4[2] + " " + arr4[3] + " " + arr4[4]);
-		arr4[0] = 100;
-		System.out.println(arr3[0] + " " + arr4[0]);
+		int [] a3 = new int[] {1,2,3,4,5};
+		System.out.println(a3[0] + " " + a3[1] + " " + a3[2] + " " + a3[3] + " " + a3[4]);
+		int [] a4 = {5,4,3,2,1};
+		System.out.println(a4[0] + " " + a4[1] + " " + a4[2] + " " + a4[3] + " " + a4[4]);
+		a4[0] = 100;
+		System.out.println(a3[0] + " " + a4[0]);
 		
 		// 4. 배열 변수 arr5, arr6을 선언하는 코드
 		int [] a5, a6;
