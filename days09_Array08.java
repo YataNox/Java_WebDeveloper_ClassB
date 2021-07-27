@@ -30,6 +30,15 @@ public class Array08
 				a[i] *= -1;
 			
 			a[i] = a[i] % 45 + 1; // a[i] = (rd.nextInt() * 45) + 1;
+			// 중복 검사
+			int j;
+			for(j = 0; j < i; j++)
+				if(a[j] == a[i]) // 중복이 나왔을 때
+					break;
+			if(i == j) // 그 중복이 현재 작성한 마지막 숫자일 경우 그냥 계속 진행
+				continue;
+			else if (i != j) // 아닐 경우 이전 숫자 재생성
+				i--;
 		}
 		
 		// 오름차순 정렬
