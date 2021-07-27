@@ -21,39 +21,43 @@ public class Array08
 		System.out.printf("%d ", a[0]);
 		System.out.println();
 		
-		// 6개의 랜덤 값 생성
-		for(int i = 0; i < a.length; i++)
+		for(int n = 0; n < 5; n++) // 5
 		{
-			a[i] = rd.nextInt();
-	
-			if(a[i] < 0)
-				a[i] *= -1;
+			// 6개의 랜덤 값 생성
+			for(int i = 0; i < a.length; i++)
+			{
+				a[i] = rd.nextInt();
+		
+				if(a[i] < 0)
+					a[i] *= -1;
+				
+				a[i] = a[i] % 45 + 1; // a[i] = (rd.nextInt() * 45) + 1;
+				// 중복 검사
+				int j;
+				for(j = 0; j < i; j++)
+					if(a[j] == a[i]) // 중복이 나왔을 때
+						break;
+				if(i == j) // 그 중복이 현재 작성한 마지막 숫자일 경우 그냥 계속 진행
+					continue;
+				else if (i != j) // 아닐 경우 이전 숫자 재생성
+					i--;
+			}
 			
-			a[i] = a[i] % 45 + 1; // a[i] = (rd.nextInt() * 45) + 1;
-			// 중복 검사
-			int j;
-			for(j = 0; j < i; j++)
-				if(a[j] == a[i]) // 중복이 나왔을 때
-					break;
-			if(i == j) // 그 중복이 현재 작성한 마지막 숫자일 경우 그냥 계속 진행
-				continue;
-			else if (i != j) // 아닐 경우 이전 숫자 재생성
-				i--;
+			// 오름차순 정렬
+			for(int i = 0; i < a.length; i++)
+				for(int j = i+1; j < a.length; j++)
+					if(a[i] > a[j])
+					{
+						t = a[i];
+						a[i] = a[j];
+						a[j] = t;
+					}
+			
+			// 출력
+			for(int i = 0; i < a.length; i++)
+				System.out.printf("%d ", a[i]);
+			
+			System.out.println();
 		}
-		
-		// 오름차순 정렬
-		for(int i = 0; i < a.length; i++)
-			for(int j = i+1; j < a.length; j++)
-				if(a[i] > a[j])
-				{
-					t = a[i];
-					a[i] = a[j];
-					a[j] = t;
-				}
-		
-		// 출력
-		for(int i = 0; i < a.length; i++)
-			System.out.printf("%d ", a[i]);
-		
 	}
 }
