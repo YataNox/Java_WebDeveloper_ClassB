@@ -27,6 +27,10 @@ public class Array11
 		for(int i = 0; i < a.length-1; i++)
 			System.out.printf("%d, ", a[i]);
 		System.out.println(a[a.length-1]);
+		/*
+		 * for(int i = 0; i < a.length; i++)
+			System.out.printf("%d ", a[i]);
+		 */
 		
 		System.out.print("b배열 -> ");
 		for(int i = 0; i < b.length-1; i++)
