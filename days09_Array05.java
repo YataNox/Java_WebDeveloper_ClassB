@@ -44,5 +44,6 @@ public class Array05
 		for(int k = 0; k < i-1; k++)
 			System.out.printf("%d ", score[k]);
 		System.out.printf("\n총점 : %d점, 평균 : %.2f점\n", tot, avg);
+		sc.close();
 	}
 }
