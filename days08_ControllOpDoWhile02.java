@@ -39,6 +39,6 @@ public class ControllOpDoWhile02
 			isExit = sc.nextInt();
 		}while(isExit != 2);
 		System.out.println("시스템 종료");
-		sc.nextInt();
+		sc.close();
 	}
 }
