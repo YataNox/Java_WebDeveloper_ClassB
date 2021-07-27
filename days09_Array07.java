@@ -18,6 +18,47 @@ public class Array07
 				min = a[i];
 		}
 		
-		System.out.printf("최대 값 : %d, 최소 값 : %d", max, min);
+		System.out.printf("최대 값 : %d, 최소 값 : %d\n", max, min);
+		
+		// 배열의 값들을 오름차순 또는 내림차순으로 재배치(정렬)
+		// int [] a = {56, 87, 96, 87, 45, 89, 69, 36, 13, 98};
+		// i를 첨자로한 값과 그 뒤를 잇는 j를 첨자로 한 값들을 모두 한 번씩 비교하여
+		// i번째 값보다 작은 숫자가 나오면 그 둘의 값을 맞바꿔서 작은 값이 앞으로
+		// 오게 합니다.
+		
+		// 실행 결과 j가 마지막 첨자까지 도달했을 때 i번째에는 가장 작은 숫자가
+		// 저장되게 하는 원리 입니다.
+		
+		// 변수들의 값을 맞교환 동작이 필요
+		int a1 = 30, b1 = 50;
+		// a1 = b1;
+		// b1 = a1;
+		int t  = a1;
+		a1 = b1;
+		b1 = t;
+		
+		int i, j;
+		for(i = 0; i < a.length; i++)
+			for(j = i+1; j < a.length; j++)
+				if(a[i] > a[j])
+				{
+					t = a[i];
+					a[i] = a[j];
+					a[j] = t;
+				}
+		for(i = 0; i < a.length; i++)
+			System.out.printf("%d ", a[i]);
+		System.out.println();
+		
+		for(i = 0; i < a.length; i++)
+			for(j = i+1; j < a.length; j++)
+				if(a[i] < a[j])
+				{
+					t = a[i];
+					a[i] = a[j];
+					a[j] = t;
+				}
+		for(i = 0; i < a.length; i++)
+			System.out.printf("%d ", a[i]);
 	}
 }
