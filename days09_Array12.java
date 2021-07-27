@@ -84,6 +84,7 @@ public class Array12
 				break;
 			}
 			
+			// 못 맞췄을 시 다음을 위해 B와 S값 초기화
 			ball = 0;
 			strike = 0;
 		}
