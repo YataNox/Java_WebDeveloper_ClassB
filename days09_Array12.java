@@ -56,6 +56,12 @@ public class Array12
 			for(int i = 0; i < rNum.length; i++)
 				uNum[i] = sc.nextInt();
 			
+			/*
+			 String num = sc.nextLint();
+			 for(int i = 0; i < uNum.length; i++)
+			 	uNum[i] = num.charAt(i) - '0'; // '4' - '0' = 4;
+			 */
+			
 			// S와 B 검사
 			for(int i = 0; i < rNum.length; i++)
 				for(int j = 0; j < uNum.length; j++)
