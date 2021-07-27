@@ -13,7 +13,7 @@ public class Array06
 		int [] score = new int[k];
 		int tot = 0;
 		double avg;
-		for(int i = 0; i < k; i++)
+		for(int i = 0; i < k; i++) // for(int i = 0; i < score.length; i++)
 		{
 			System.out.printf("점수 입력 : ");
 			score[i] = sc.nextInt();
