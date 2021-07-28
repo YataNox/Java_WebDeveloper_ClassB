@@ -16,5 +16,11 @@ public class Method02
 	{
 		myPrint(100); // 100 : 전달인수 -> 괄호안에 전달된 인수는 메서드
 		// 실행될 떄 괄호안에 선언된 n변수에 저장합니다.
+		myPrint(200);
+		myPrintWith2Int(300, 400);
+	}
+	public static void myPrintWith2Int(int n1, int n2)
+	{
+		System.out.println("전달받은 매개변수의 값 n1 -> " + n1 + ", n2 -> " + n2);
 	}
 }
