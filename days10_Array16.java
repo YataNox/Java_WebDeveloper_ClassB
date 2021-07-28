@@ -56,5 +56,18 @@ public class Array16
 		for(int k : c)
 			System.out.printf("%d ", k);
 		System.out.println();
+		
+		// 2차원 배열의 복사
+		// 2차원 배열(다차원 배열)은 clone 메소드의 결과로 실제 일차원 배열을 관리하고 있는
+		// 참조 변수들의 배열만 복사합니다. (2차원 배열의 전체적 행 갯수만 복사한다는 뜻)
+		int [][] arr4 = {{1,2,3}, {4,5,6}};
+		
+		System.out.println("arr4 : ");
+		for(int i = 0; i < arr4.length; i++)
+		{
+			for(int j = 0; j < arr4[i].length; j++)
+				System.out.printf("%d ", arr4[i][j]);
+			System.out.println();
+		}
 	}
 }
