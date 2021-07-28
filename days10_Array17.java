@@ -20,13 +20,28 @@ public class Array17
 			
 			for(int j = 0; j < score[i].length-1; j++)
 			{
-				System.out.printf("%d번째 학생 %s과목 점수 : ", i+1, subject[j]);
+				System.out.printf("%s 학생의 %s과목 점수 : ", name[i], subject[j]);
 				score[i][j] = sc.nextInt();
 				sc.nextLine();
 			}
 			score[i][3] = score[i][0] + score[i][1] + score[i][2];
 			avg[i] = score[i][3] / 3.0;
 		}
-    sc.close();
+		
+		System.out.println("\t\t=====성적표=====");
+		System.out.println("---------------------------------------------------------");
+		System.out.println("번호\t성명\t\t국어\t영어\t수학\t총점\t평균");
+		System.out.println("---------------------------------------------------------");
+		for(int i = 0; i < score.length; i++)
+		{
+			System.out.printf("%d\t", i+1);
+			System.out.printf("%s\t\t", name[i]);
+			for(int j = 0; j < score[i].length; j++)
+				System.out.printf("%d\t", score[i][j]);
+			System.out.printf("%.2f\n", avg[i]);
+		}
+		System.out.println("---------------------------------------------------------");
+		
+		sc.close();
 	}
 }
