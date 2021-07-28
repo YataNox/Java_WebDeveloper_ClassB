@@ -29,13 +29,21 @@ public class Method06
 	// 우항의 값 또는 실행 결과를 메소드를 호출한 지점으로 반환(리턴)
 	public static int max(int a, int b, int c)
 	{
-		int[] list = {a, b, c};
+		/*int[] list = {a, b, c};
 		int max = list[0];
 		for(int i = 0; i < list.length; i++)
 		{
 			if(max < list[i])
 				max = list[i];
-		}
-		return max;
+		}*/
+		int mv;
+		if(a > b)
+			mv = a;
+		else
+			mv = b;
+		if(mv > c)
+			return mv;
+		else
+			return c;
 	}
 }
