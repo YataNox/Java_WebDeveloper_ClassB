@@ -24,5 +24,19 @@ public class Array14
 		// 동작 원리
 		// - a배열의 값들이 차례로 j 변수에 전달되면서 반복 실행합니다.
 		// - a배열의 요소 갯수만큼 반복 실행합니다.
+		
+		System.out.println();
+		k = 1;
+		int [][] b = new int[5][5];
+		for(int i = 0; i < b.length; i++)
+			for(int j = 0; j < b[i].length; j++)
+				b[j][i] = k++;
+		
+		for(int[] bAddrs : b)
+		{
+			for(int j : bAddrs)
+				System.out.print(j + " ");
+			System.out.println();
+		}
 	}
 }
