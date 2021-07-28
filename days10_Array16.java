@@ -69,5 +69,20 @@ public class Array16
 				System.out.printf("%d ", arr4[i][j]);
 			System.out.println();
 		}
+		
+		int[][] arr5 = arr4.clone();
+		// arr4와 공유하고 있는 1차원 배열의 값이 수정
+		// 얕은 복사로 복사된 arr5의 값을 수정하게 되면 arr4도 변경된 값을 출력하게 됨
+		arr4[1][0] = 400;
+		System.out.println("arr5(arr4 clone) : ");
+		for(int i = 0; i < arr5.length; i++)
+		{
+			for(int j = 0; j < arr5[i].length; j++)
+				System.out.printf("%d ", arr5[i][j]);
+			System.out.println();
+		}
+		arr5[0] = new int[3];
+		arr5[1] = new int[3];
+		// 새로 공간 생성 후 각각의 값을 다시 복사해야 완벽한 복사가 실행됩니다.
 	}
 }
