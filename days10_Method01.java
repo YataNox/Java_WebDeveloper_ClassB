@@ -31,4 +31,5 @@ public class Method01
 	{
 		System.out.println("내가 만든 Print 메서드 실행~~!!"); // 2,4,5,6번
 	}
+	// 개발자 정의 메소드의 정의 위치는 main의 위나 아래 모두 정의 가능합니다.
 }
