@@ -19,8 +19,14 @@ public class Method02
 		myPrint(200);
 		myPrintWith2Int(300, 400);
 	}
+	// 아래 메서드는 다수의 매개변수를 전달 받는 매서드의 형태 - 각 매개변수 별로
+	// 전달 받을 변수를 선언합니다.
+	// 동일한 타입이라도 자료형의 생략은 혀용되지 않습니다. (int n1, n2) X
 	public static void myPrintWith2Int(int n1, int n2)
 	{
 		System.out.println("전달받은 매개변수의 값 n1 -> " + n1 + ", n2 -> " + n2);
 	}
+	// 전달인수는 반드시 매개변수의 자료형과 일치하는 자료를 전달해줘야 합니다.
+	// 다수개의 값을 전달할때는 자료형과 순서도 일치하게 전달해줘야 합니다.
+	// 매개변수 acb(int x, double y) 전달인수 abc(300.0, 500);
 }
