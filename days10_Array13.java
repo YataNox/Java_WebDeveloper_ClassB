@@ -33,7 +33,31 @@ public class Array13
 		// 세 번째 행의 두 번째 값 출력
 		System.out.println(arr[2][1]);
 		
-		int [] a = {1,2,3,4,5};
-		for()
+		// 2차원 배열의 배열을 생성하면서 초기화하는 방법
+		// 초기화 값을 설정하는 방법
+		// {{1번째 행의 초기화 값},{2번째 행의 초기화 값}...}
+		// 2행 3열의 2차원 배열을 생성하면서
+		// 1번째 행의 요소 값을 1,2,3으로 2번째 행의 요소 값을 4,5,6으로 지정
+		int [][] arr3 = new int[][] {{1,2,3},{4,5,6}}; // 2행 3열 2차원 배열
+		System.out.println(arr3[0][2]);
+		System.out.println(arr3[1][1]);
+		
+		int [][] arr4 = new int[][] {{1,2}, {4,5}, {7,8}}; // 3행 2열 2차원 배열
+		System.out.println(arr4[0][1]);
+		System.out.println(arr4[1][1]);
+		
+		// 2차원의 배열 생성 후 2중 반복 실행문에 의한 값 저장 & 출력
+		int [][] a1 = new int[5][5];
+		int k = 1;
+		for(int i = 0; i <= 4; i++)
+			for(int j = 0; j <= 4; j++)
+				a1[i][j] = k++;
+		
+		for(int i = 0; i <= 4; i++)
+		{
+			for(int j = 0; j <= 4; j++)
+				System.out.printf("%d\t", a1[i][j]);
+			System.out.println();
+		}
 	}
 }
