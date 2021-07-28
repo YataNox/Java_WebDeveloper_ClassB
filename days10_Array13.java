@@ -49,8 +49,8 @@ public class Array13
 		// 2차원의 배열 생성 후 2중 반복 실행문에 의한 값 저장 & 출력
 		int [][] a1 = new int[5][5];
 		int k = 1;
-		for(int i = 0; i <= 4; i++)
-			for(int j = 0; j <= 4; j++)
+		for(int i = 0; i <= a1.length; i++)
+			for(int j = 0; j <= a1[i].length; j++)
 				a1[i][j] = k++;
 		
 		for(int i = 0; i <= 4; i++)
