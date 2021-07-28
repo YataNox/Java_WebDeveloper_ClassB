@@ -42,5 +42,19 @@ public class Array16
 		for(int k : b)
 			System.out.printf("%d ", k);
 		System.out.println();
+		
+		// 2. 배열 복사의 방법 2번
+		// clone 메소드를 사용한 배열의 복사 : 배열명.clone();
+		// 해당 배열 변수가 레퍼런스(참조)하고 있는 장소으 배열을 새로운 공간에 복제합니다.
+		// arr2는 arr1 배열이 복제된 배열을 참조하는 변수
+		int[] c = a.clone(); // 힙 영역에 배열의 복사본을 새로 만들고 그 주소를 전달
+		a[1] = 200;
+		for(int k : a)
+			System.out.printf("%d ", k);
+		System.out.println();
+		
+		for(int k : c)
+			System.out.printf("%d ", k);
+		System.out.println();
 	}
 }
