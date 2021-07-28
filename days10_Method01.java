@@ -20,11 +20,15 @@ public class Method01
 		myPrint(); // 2번
 		// 메서드가 하나 호출되면, 메서드의 몸체로 포커스가 이동한 뒤 그 몸체를 모두 실행하고
 		// 원래 자리로 돌아옵니다.
-		System.out.println("프로그램 종료"); // 3번
+		System.out.println("프로그램 중간 실행 중"); // 3번
+		myPrint(); // 4번
+		myPrint(); // 5번
+		myPrint(); // 6번
+		System.out.println("프로그램 종료"); // 7번
 	}
 	// 아래와 같이 정의하고 ,위와 같이 이름 부르면 메소드의 몸체가 되는 코드가 실행됩니다.
 	public static void myPrint()
 	{
-		System.out.println("내가 만든 Print 메서드 실행~~!!"); // 2번
+		System.out.println("내가 만든 Print 메서드 실행~~!!"); // 2,4,5,6번
 	}
 }
