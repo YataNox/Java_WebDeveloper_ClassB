@@ -9,5 +9,20 @@ public class Method12
 		// 인지하는 문법
 		// 일관된 메소드 이름을 사용하여 사용자에게 직관적인 이름을 사용하게 합니다.
 		// 전달인수(매개변수)의 자료형, 순서 등이 서로 달라도 가능
+		System.out.println("두 개의 정수 중 큰 값 : " + max(11, 33));
+		System.out.println("두 개의 실수 중 큰 값 : " + max(12.8, 12.5));
+		
+	}
+	
+	public static int max(int a, int b)
+	{
+		int maxValue = (a > b)? a:b;
+		return maxValue;
+	}
+	
+	public static double max(double a, double b)
+	{
+		double maxValue = (a > b)? a:b;
+		return maxValue;
 	}
 }
