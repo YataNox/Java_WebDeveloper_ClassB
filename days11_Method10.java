@@ -49,7 +49,7 @@ public class Method10
 	// 평균 계산 함수
 	public static double avg(int kor, int eng, int mat)
 	{
-		int total = sum(kor, eng, mat);
+		double total = sum(kor, eng, mat) / 3.0;
 		return total;
 	}
 	
