@@ -16,13 +16,13 @@ public class Method12
 	
 	public static int max(int a, int b)
 	{
-		int maxValue = (a > b)? a:b;
+		int maxValue = (a > b)? a : b;
 		return maxValue;
 	}
 	
 	public static double max(double a, double b)
 	{
-		double maxValue = (a > b)? a:b;
+		double maxValue = (a > b)? a : b;
 		return maxValue;
 	}
 }
