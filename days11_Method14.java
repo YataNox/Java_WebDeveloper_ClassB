@@ -10,6 +10,7 @@ public class Method14
 	}
 	// 같은 형의 갯수가 정해지지 않은 전달인수와 다른 자료형의 전달인수가 동시에
 	// 전달되어야 한다면, 반듣시 ...으로 처리할 데이터들 보다 앞서서 전달되게 위치시킵니다.
+	// 즉 ...으로 처리할 데이터들보다 왼쪽에 전달되게 위치시킵니다.
 	public static void sort(String order, int... a)
 	{
 		if(order.equals("desc"))
