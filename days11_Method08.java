@@ -21,21 +21,17 @@ public class Method08
 	
 	// 윤년 검사 함수
 	public static boolean yoon(int year)
-	{
-		boolean check = false;
-		
+	{	
 		if(year % 4 == 0 && year % 100 != 0 || year % 400 == 0)
-			check = true;
+			return true;
 		else 
-			check = false;
-		
-		return  check;
+			return false;
 	}
 	
 	// 출력함수
 	public static void prn(boolean a)
 	{
-		if(a == true)
+		if(a)
 			System.out.print("입력한 연도는 윤년입니다.");
 		else
 			System.out.print("입력한 연도는 평년입니다.");
