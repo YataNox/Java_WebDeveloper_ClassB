@@ -17,6 +17,7 @@ public class Method07
 		d = calculate2(ban);
 		
 		prn(n, d);
+		sc.close();
 	}
 	
 	// 원의 넓이 함수
