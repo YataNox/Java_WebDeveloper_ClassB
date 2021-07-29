@@ -25,7 +25,7 @@ public class Method11
 	// 평균 메소드
 	public static double average(int[]a)
 	{
-		return  sum(a) / 3.0;
+		return  sum(a) / a.length;
 	}
 	
 	// 출력 메소드
