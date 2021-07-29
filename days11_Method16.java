@@ -6,11 +6,13 @@ public class Method16
 {
 	public static void main(String[] args)
 	{
+		Scanner sc = new Scanner(System.in);
 		int [][] scores;
-		int s = getStudentNumber(); // 학생수를 입력 받아서 리턴하는 메소드
-		int k = getSubjectNumber(); // 과목수를 입력 받아서 리턴하는 메서드
+		int s = getStudentNumber(sc); // 학생수를 입력 받아서 리턴하는 메소드
+		int k = getSubjectNumber(sc); // 과목수를 입력 받아서 리턴하는 메서드
 		scores = new int[s][k];
-		input(scores); // s 명의 학생의 k 개의 과목 수 입력
+		input(scores, sc); // s 명의 학생의 k 개의 과목 수 입력
+		sc.close(); // 이후 Scanner 미사용으로 종료
 		output(scores); // 총점 평균 계산 후 성적표 출력
 		//				 -------- 성적표 --------
 		// --------------------------------------------
@@ -19,10 +21,9 @@ public class Method16
 	}
 	
 	// 학생 수 입력 함수
-	public static int getStudentNumber()
+	public static int getStudentNumber(Scanner sc)
 	{
 		int std;
-		Scanner sc = new Scanner(System.in);
 		
 		System.out.print("학생 수 입력 : ");
 		std = sc.nextInt();
@@ -31,10 +32,9 @@ public class Method16
 	}
 	
 	// 과목 수 입력 함수
-	public static int getSubjectNumber()
+	public static int getSubjectNumber(Scanner sc)
 	{
 		int sub;
-		Scanner sc = new Scanner(System.in);
 		
 		System.out.print("과목 수 입력 : ");
 		sub = sc.nextInt();
@@ -43,10 +43,8 @@ public class Method16
 	}
 	
 	// 과목 점수 입력 함수
-	public static void input(int[][] scores)
+	public static void input(int[][] scores, Scanner sc)
 	{
-		Scanner sc = new Scanner(System.in);
-		
 		for(int i = 0; i < scores.length; i++)
 		{
 			System.out.println("--------------------------------------------");
@@ -58,7 +56,6 @@ public class Method16
 				scores[i][j] = sc.nextInt();
 			}
 		}
-		sc.close();
 	}
 	
 	// 성적 출력 함수
