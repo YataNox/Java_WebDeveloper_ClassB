@@ -85,6 +85,6 @@ public class Class06
 			System.out.printf("메뉴 선택 : 1. 입금	2. 출금	3. 잔액확인	4. 종료 : ");
 			selectMenu = sc.nextInt();
 		}
-		
+		sc.close();
 	}
 }
