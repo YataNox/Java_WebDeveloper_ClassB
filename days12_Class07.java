@@ -34,8 +34,8 @@ public class Class07
 	public static void main(String[] args) 
 	{
 		GetSetTest gs = new GetSetTest();
-		//	gs.setNum(12345);
-		//	int n = gs.getNum();
+		// gs.setNum(12345);
+		// int n = gs.getNum();
 		// System.out.println("멤버 변수의 num값은 " + n + "입니다.");
 	}
 }
