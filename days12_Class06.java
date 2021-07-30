@@ -10,6 +10,14 @@ package days12;
 // protected :  child class 에서만 자유롭게 접근이 가능. 상속 단원에서 자세히 학습합니다.
 // default : 접근 지정자를 지정하지 않으면 자동으로 갖게 되는 접근 지정자이며,
 // 같은 패키지 내에서 자유롭게 접근 가능합니다.
+class AccountWithPermission
+{
+	// 정보은닉
+	// 클래스 내부에 선언된 멤버필드들은 현실에 존재하는 대상의 정보를 저장합니다.
+	// 일반저긍로 이러한 정보들은 직접적으로 접근 및 수정해서는 안됩니다.
+	// 이러한 이유로 모든 멤버필드들은 private으로 선언하고, 멤버필드들을 제어할
+	// 수 있는 메서드들을 public으로 선언합니다.
+}
 public class Class06 
 {
 	public static void main(String[] args) 
