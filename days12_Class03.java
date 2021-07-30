@@ -20,6 +20,14 @@ class Animal
 	}
 	// 멤버 메소드는 같은 클래스 안에 있는 메소드이므로, 변수 앞에 객체 이름을 쓰지 않습니다.
 	// 다만 호출 객체 정보는 자동으로 전다로디서 어느 객체에 변수가 사용되는지 자동 구분됩니다.
+	
+	// 멤버 메소드는 특별한 경우를 빼고 static 키워드를 사용하지 않습니다.
+	// 현재 프로그램에(패키지 내의 같은 파일)서만 사용한다는 가정하에
+	// public도 생략 가능합니다.
+	String getName()
+	{
+		return name;
+	}
 }
 public class Class03 
 {
@@ -40,5 +48,8 @@ public class Class03
 		
 		a1.output();
 		a2.output();
+		
+		//String n = a1.getName();
+		//System.out.println("a1의 이름은 " + n);
 	}
 }
