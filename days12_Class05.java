@@ -38,7 +38,7 @@ public class Class05
 		Account a = new Account();
 		//a.balance = 50000; // 에러
 		// System.out.println("현재 잔액은 %.f원 입니다.\n", a.balance); // 에러
-		a.initBalance(10000);
+		a.initBalance(100000);
 		a.display();
 		a.withraw(5000); // 출금
 		a.display();
