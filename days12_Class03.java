@@ -49,7 +49,7 @@ public class Class03
 		a1.output();
 		a2.output();
 		
-		//String n = a1.getName();
+		//String n = a1.getName(); // n = a1.name;
 		//System.out.println("a1의 이름은 " + n);
 	}
 }
