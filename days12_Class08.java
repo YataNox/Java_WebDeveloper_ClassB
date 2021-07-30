@@ -24,6 +24,8 @@ class Aclass
 		age = 100;
 	}
 	public int getAge() {return age;}
+	public void setAge(int age) {this.age = age;}
+	// this : 멤버 변수를 식별하는 식별자입니다.
 }
 
 public class Class08 
