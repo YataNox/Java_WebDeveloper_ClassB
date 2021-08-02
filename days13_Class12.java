@@ -1,30 +1,56 @@
 package days13;
 
-class Dclass
+class Gugudan
 {
-	Dclass()
+	int dan;
+	
+	Gugudan()
 	{
-		System.out.println("전달받는 매개변수가 없는 디폴트 생성자 호출");
+		dan = 0;
 	}
-	Dclass(int n)
+	Gugudan(int dan)
 	{
-		System.out.println("int 타입 매개변수를 전달받는 생성자 호출");
+		this.dan = dan;
 	}
-	Dclass(double n)
+	
+	public void print()
 	{
-		System.out.println("double 타입 매개변수를 전달받는 생성자 호출");
+		if(this.dan == 0)
+		{
+			for(int i = 1; i <= 9; i++)
+			{
+				for(int j = 1; j <=9; j++)
+					System.out.printf("%d x %d = %d\n", i, j , i*j);
+				System.out.println();
+			}
+		}
+		else
+		{
+				for(int i = 1; i <=9; i++)
+					System.out.printf("%d x %d = %d\n", dan, i , dan*i);
+				System.out.println();
+		}
 	}
+	
 }
 
-public class Class11 
+public class Class12 
 {
 	public static void main(String[] args)
 	{
-		Dclass d1 = new Dclass();
-		Dclass d2 = new Dclass(10);
-		Dclass d3 = new Dclass(10.23);
-		// 위와 같은 실행이 가능하도록 Dclass의 생성자들을 만들어주세요
-		// 생성자에서는 각각 어떤 매개변수가 있는 생성자인지 출력되게 코딩하세요.
-		// 예) System.out.println('int 타입 매개변수를 전달받는 생성자 호출');
+		// int형 데이터 하나를 매개변수로 하는 생성자와 디폴트 생성자가 오버로딩 된 생성자를 
+		// 갖는 클래스 제작
+		// 멤버 필드로는 int dan; 하나 생성
+		// 멤버 메소드 : dan 값이 0dlaus 1~9단의 구구단 모두 출력, 0이 아니면 해당 구구단만
+		// 출력하는 메서드 제작
+		// 디폴트 생성자는 dan 변수를 0으로 저장, 전달인수가 있는 생성자는 dan 변수를 전달인수
+		// 값으로 저장
+		// 메서드 이름 : print()
+		// 클래스 이름 Gugudan
+		
+		Gugudan g1 = new Gugudan(8);
+		Gugudan g2 = new Gugudan();
+		g1.print();
+		g2.print();
 	}
 }
