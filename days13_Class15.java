@@ -27,6 +27,16 @@ class ThisB
 		this.num2 = n2;
 		System.out.println("ThisB클래스의 생성자2가 호출되었습니다.");
 	}
+	
+	ThisB(int n1, int n2, int n3)
+	{
+		this(n1, n2);
+		// this를 사용한 생성자간 호출 코드는 반드시 생성자의 명령 중 첫 번째 
+		// 실행코드로만 사용 가능합니다.
+		this.num3 = n3;
+		System.out.println("ThisB클래스의 생성자3이 호출되었습니다.");
+	}
+	
 }
 
 public class Class15 
@@ -35,5 +45,6 @@ public class Class15
 	{
 		ThisB b1 = new ThisB(10);
 		ThisB b2 = new ThisB(10, 20);
+		ThisB b3 = new ThisB(10, 20, 30);
 	}
 }
