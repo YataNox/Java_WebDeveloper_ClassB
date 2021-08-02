@@ -29,7 +29,7 @@ class Student
 		this.scores[2] = mat;
 	}
 	
-	public void copy1(Student tmp)
+	public void copy1(Student tmp) // std1.copy1(std3);
 	{
 		this.bunho = tmp.bunho;
 		this.name = tmp.name;
@@ -37,7 +37,7 @@ class Student
 			this.scores[i] = tmp.scores[i];
 	}
 	
-	public Student copy2()
+	public Student copy2() // Student std4 = std3.copy2();
 	{
 		Student tmp = new Student();
 		
