@@ -31,6 +31,7 @@ class Student
 	
 	public void copy1(Student tmp) // std1.copy1(std3);
 	{
+		// this <- std1 		b <- std3
 		this.bunho = tmp.bunho;
 		this.name = tmp.name;
 		for(int i = 0; i < scores.length; i++)
@@ -39,6 +40,7 @@ class Student
 	
 	public Student copy2() // Student std4 = std3.copy2();
 	{
+		// this <- std3
 		Student tmp = new Student();
 		
 		tmp.bunho = this.bunho;
@@ -46,7 +48,7 @@ class Student
 		for(int i = 0; i < scores.length; i++)
 			tmp.scores[i] = this.scores[i];
 		
-		return tmp;
+		return tmp; // std4 <- t
 	}
 }
 
@@ -57,6 +59,7 @@ public class Class16
 		Student std1 = new Student();
 		Student std2 = new Student("홍길동");
 		Student std3 = new Student("홍길남, 100, 100, 100");
+		
 		std1.copy1(std3);
 		Student std4 = std3.copy2();
 	}
