@@ -53,5 +53,10 @@ public class Class20
 		System.out.println(strNum1 + strNum2);
 		// 문자열의 값을 실수로 변환한 후 연산
 		System.out.println(Double.parseDouble(strNum1) + Double.parseDouble(strNum2));
+		
+		// 정수나 실수를 문자로 바꾸는 static 메서더는 String 클래스 내에 있습니다.
+		strNum1 = String.valueOf(1234);
+		strNum2 = String.valueOf(123.454);
+		System.out.println(strNum1 + strNum2);
 	}
 }
