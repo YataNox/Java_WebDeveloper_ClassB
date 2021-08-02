@@ -21,6 +21,27 @@ public class Class20
 		// Math.random();와같이 사용하고
 		//Random 클래스의 nextInt() 메서드는 동적 멤버 메소드이므로 객체 생성 후
 		// 호출 객체를 앞에 두고 사용합니다.
-		// Random rd = new Randon(); rd.nextInt();
+		// Random rd = new Randon(); rd.nextInt();  //% 100 +1;
+		
+		int num = -10;
+		System.out.printf("num = %d, num 변수의 절대 값 = %d\n", num, Math.abs(num));
+		
+		num = 9;
+		System.out.printf("num 변수의 제곱근 = %.2f\n", Math.sqrt(num));
+		
+		System.out.println("Math 클래스 난수 발생 Static Method 값 : " + (int)(Math.random() * 100+1));
+		System.out.println("0~33 난수 발생 Static Method 값 : " + (int)(Math.random() * 33));
+		
+		// Integer 클래스 (int 타입과 매핑되는 클래스)
+		// Integer 클래스의 parseInt 메소드는 문자열로 되어있는 정수 값을 Int타입으로 반환
+		String strNum1 = "100";
+		String strNum2 = "50";
+		// 문자열 결합
+		System.out.println(strNum1 + strNum2);
+		//(strNum1.charAt(0) - '0') * 100 + (strNum1.charAt(1) - '0') * 10
+		//+ (strNum1.charAt(2) - '0') * 1;
+		
+		// 문자열의 값을 정수로 변환한 후 연산
+		System.out.println(Integer.parseInt(strNum1) + Integer.parseInt(strNum2));
 	}
 }
