@@ -11,6 +11,10 @@ class MemberCall
 	int iv = 10; 
 	// 스태틱 변수 : 프로그램이 시작할 때 sc가 생성 -> 20으로 초기화
 	static int sv = 20;
+	// 인스턴스 변수 : 객첵 생성될 때 iv2가 생성 -> 이미 만들어져서 20을 저장하고 잇는
+	// cv 값으로 초기화 -> 가능
+	int iv2 = sv;
+	static int sv2 = iv; // 에러 : iv가 언제 생성될지 모르므로, sv2에 값을 전달할 수 없다.
 }
 
 public class Class22 
