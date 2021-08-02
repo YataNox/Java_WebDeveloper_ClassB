@@ -15,22 +15,25 @@ class Std
 	}
 	Std(String name)
 	{
-		this();
+		this(); // 전달인수가 없는 오버로딩된 생성자 호출
 		this.name = name;
 	}
 	Std(String name, int kor, int eng, int mat)
 	{
-		this(name);
+		this(name); // String형 전달인수가 있는 오버로딩된 생성자 호출
 		this.scores[0] = kor;
 		this.scores[1] = eng;
 		this.scores[2] = mat;
 	}
 	Std(Std tmp)
 	{
+		/*
 		this();
 		this.name = tmp.name;
 		for(int i = 0; i < scores.length; i++)
 			this.scores[i] = tmp.scores[i];
+		*/
+		this(tmp.name, tmp.scores[0], tmp.scores[1], tmp.scores[2]);
 	}
 	// main에서 호출된 생성자 4개를 제작해주세요. count  변수를 이용, 번호를 입력하세요.
 	// 디폴트 생성자에서는 scores 배열의 공간을 할당해주시고,
