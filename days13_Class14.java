@@ -21,6 +21,19 @@ class ThisA
 		// 멤버 메소드에서는 멤버변수에 접근 권한이 있으므로, 참조변수 this와
 		// 멤버변수가 (.)으로 연결되어 사용됩니다.
 	}
+	
+	public void display(/*ThisA this*/)
+	{
+		System.out.printf("n = %d\n", n);
+		// 매개변수와 멤버변수가 겹치는 상황 등 여러 이유로 this 꼭 사용해야하는 사오항이
+		// 있지만, 그런 상황이 아니라면 위처럼 생략 가능합니다.
+		// 보통 멤버변수를 this 없이 사용해도 매개변수가 아니라면 아래의 실행 코드는
+		// 내부적으로 this가 붙어서 다음과 같이 변환되어 실행됩니다.
+		// System.out.printf("n = %d\n", this.n);
+	}
+	// this의 용도 1 : 멤버메소드를 호출한 호출 객체의 참조변수 값(주소 값)을 전달받아
+	// 전달된 호출 객체를 식별하는 용도로 사용됩니다.
+	
 }
 
 public class Class14 
@@ -29,7 +42,10 @@ public class Class14
 	{
 		ThisA a1 = new ThisA();
 		ThisA a2 = new ThisA();
+		
 		a1.setNum(10);
 		a1.setNum(20);
+		a1.display();
+		a2.display();
 	}
 }
