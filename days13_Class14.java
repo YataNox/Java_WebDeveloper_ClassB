@@ -47,5 +47,14 @@ public class Class14
 		a2.setNum(20);
 		a1.display();
 		a2.display();
+		
+		ThisA a3 = a1; // a1 참조변수 값을 a3에 복사하는 동작
+		
+		a3.setNum(100); // a3의 멤버변수만 수정.
+		a1.display();  // 출력은 a1과 a3가 모두 수정되어 출력
+		a3.display();
+		// 위 연산은 new를 이용하여 a3에 새로운 공간을 만든게 아니라,
+		// a1 위 레퍼런스 값만 복사 저장한 결과로, a1과 a3는 같은 공간의 주소를 
+		// 저장하고 있기 때문입니다.
 	}
 }
