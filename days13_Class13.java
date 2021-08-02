@@ -13,9 +13,17 @@ class Sum
 	}
 	
 	public int add(){return a + b;}
-	public int add(int n) {return a+b+n;}
+	/*public int add(int n) {return a+b+n;}
 	public int add(int n, int m) {return a+b+n+m;}
-	public int add(int n, int m, int l) {return a+b+n+m+l;}
+	public int add(int n, int m, int l) {return a+b+n+m+l;}*/
+	public int add(int...n)
+	{
+		int tot = 0;
+		System.out.println("매개변수 4");
+		for(int i = 0; i < n.length; i++)
+			tot += n[i];
+		return a+b+tot;
+	}
 }
 
 public class Class13 
@@ -27,5 +35,6 @@ public class Class13
 		System.out.println("s.add()의 결과 : " + s.add(23));
 		System.out.println("s.add()의 결과 : " + s.add(59, 65));
 		System.out.println("s.add()의 결과 : " + s.add(59, 65, 85));
+		System.out.println("s.add()의 결과 : " + s.add(59, 65, 85, 78, 36));
 	}
 }
