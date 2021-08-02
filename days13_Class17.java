@@ -13,10 +13,20 @@ package days13;
 // static 필드/메소드의 특징
 // 프로그램의 구동 전부터 메모리를확보하고 있는 멤버필드 및 메서드!!!ㅁ
 
+class StaticA
+{
+	int num;// 멤버변수 - 동적 변수
+}
+
 public class Class17 
 {
 	public static void main(String[] args)
 	{
-		
+		// 동적 멤버 변수는 객체가 반드시 만들어져야 사용이 가능한 변수입니다.
+		StaticA a = new StaticA();
+		a.num = 100;
+		System.out.println("a 객체의 동적 멤버 변수 값 : " + a.num);
+		// 위에서 객체 생성 명령(StaticA a = new StaticA();)이 없다면
+		// 아래 두 개의 명령은 모두 에러가 발생한다.
 	}
 }
