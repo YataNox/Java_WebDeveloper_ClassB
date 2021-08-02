@@ -39,6 +39,12 @@ class ThisA
 		this.n = a.n;
 	}
 	
+	public ThisA copy2() // this <- a1
+	{
+		ThisA a = new ThisA();
+		a.n= this.n;
+		return a; // a5 <- a
+	}
 }
 
 public class Class14 
@@ -64,9 +70,14 @@ public class Class14
 		
 		ThisA a4 = new ThisA();
 		
-		a4.copy1(a2);
+		a4.copy1(a2); // 객체 복사 방법 #1
 		a2.setNum(200);
 		a4.display();
 		a2.display();
+		
+		// 객체 복사 방법 #2
+		ThisA a5 = a1.copy2();
+		a5.display();
+		a1.display();
 	}
 }
