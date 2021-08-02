@@ -36,12 +36,22 @@ public class Class20
 		// Integer 클래스의 parseInt 메소드는 문자열로 되어있는 정수 값을 Int타입으로 반환
 		String strNum1 = "100";
 		String strNum2 = "50";
-		// 문자열 결합
+		// 문자열 결합 
 		System.out.println(strNum1 + strNum2);
 		//(strNum1.charAt(0) - '0') * 100 + (strNum1.charAt(1) - '0') * 10
 		//+ (strNum1.charAt(2) - '0') * 1;
 		
 		// 문자열의 값을 정수로 변환한 후 연산
 		System.out.println(Integer.parseInt(strNum1) + Integer.parseInt(strNum2));
+		
+		// Double 클래스 (double 타입과 매핑되는 클래스)
+		// Double 클래스의 parseDouble 메소드는 문자열로 되어있는 실수 값을
+		// double 타입으로 반환
+		strNum1 = "10.75";
+		strNum2 = "5.2";
+		// 문자열 결합	
+		System.out.println(strNum1 + strNum2);
+		// 문자열의 값을 실수로 변환한 후 연산
+		System.out.println(Double.parseDouble(strNum1) + Double.parseDouble(strNum2));
 	}
 }
