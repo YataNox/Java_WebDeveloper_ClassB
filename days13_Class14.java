@@ -33,6 +33,11 @@ class ThisA
 	}
 	// this의 용도 1 : 멤버메소드를 호출한 호출 객체의 참조변수 값(주소 값)을 전달받아
 	// 전달된 호출 객체를 식별하는 용도로 사용됩니다.
+	public void copy1(ThisA a)
+	{
+		// a <- a2 this <- a4
+		this.n = a.n;
+	}
 	
 }
 
@@ -56,5 +61,12 @@ public class Class14
 		// 위 연산은 new를 이용하여 a3에 새로운 공간을 만든게 아니라,
 		// a1 위 레퍼런스 값만 복사 저장한 결과로, a1과 a3는 같은 공간의 주소를 
 		// 저장하고 있기 때문입니다.
+		
+		ThisA a4 = new ThisA();
+		
+		a4.copy1(a2);
+		a2.setNum(200);
+		a4.display();
+		a2.display();
 	}
 }
