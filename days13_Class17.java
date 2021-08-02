@@ -15,7 +15,8 @@ package days13;
 
 class StaticA
 {
-	int num;// 멤버변수 - 동적 변수
+	int num;// 멤버 변수 선언 - 동적 변수
+	static int number = 100; // 멤버 변수 선언 - 정적 변수
 }
 
 public class Class17 
@@ -28,5 +29,8 @@ public class Class17
 		System.out.println("a 객체의 동적 멤버 변수 값 : " + a.num);
 		// 위에서 객체 생성 명령(StaticA a = new StaticA();)이 없다면
 		// 아래 두 개의 명령은 모두 에러가 발생한다.
+		
+		// 그러나 static 변수는 main 메서드 실행전에, 객체 생성 전에
+		// 이미 생성되어 있는 객체와는 독립적, 클래스와는 종속적으로 사용하도록 생성됩니다.
 	}
 }
