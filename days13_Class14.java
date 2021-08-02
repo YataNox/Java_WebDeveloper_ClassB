@@ -44,7 +44,7 @@ public class Class14
 		ThisA a2 = new ThisA();
 		
 		a1.setNum(10);
-		a1.setNum(20);
+		a2.setNum(20);
 		a1.display();
 		a2.display();
 	}
