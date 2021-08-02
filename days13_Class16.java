@@ -28,6 +28,26 @@ class Student
 		this.scores[1] = eng;
 		this.scores[2] = mat;
 	}
+	
+	public void copy1(Student tmp)
+	{
+		this.bunho = tmp.bunho;
+		this.name = tmp.name;
+		for(int i = 0; i < scores.length; i++)
+			this.scores[i] = tmp.scores[i];
+	}
+	
+	public Student copy2()
+	{
+		Student tmp = new Student();
+		
+		tmp.bunho = this.bunho;
+		tmp.name = this.name;
+		for(int i = 0; i < scores.length; i++)
+			tmp.scores[i] = this.scores[i];
+		
+		return tmp;
+	}
 }
 
 public class Class16 
@@ -37,5 +57,7 @@ public class Class16
 		Student std1 = new Student();
 		Student std2 = new Student("홍길동");
 		Student std3 = new Student("홍길남, 100, 100, 100");
+		std1.copy1(std3);
+		Student std4 = std3.copy2();
 	}
 }
