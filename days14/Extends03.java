@@ -15,10 +15,27 @@ class SuperA
 	public int getN1() {return n1;}
 }
 
+class SubA extends SuperA
+{
+	public void printInfo()
+	{
+		// 부모클래스의 private 멤버에 접근할 수 없음
+		//System.out.println(this.n1); 
+		// 에러 : The field SuperA.n1. is not visible
+		// 부모클래스의 public 멤버에 접근할 수 있음
+		System.out.println(this.n2);
+		// 동일한 패키지이므로 디폴트 접근지정자로 선언된 부모의 멤버에 접근할 수 있음
+		System.out.println(this.n3);
+		// public으로 선언된 멤버메서드를 이용하면, 부모 클래스의 private 멤버에도
+		// 접근이 가능합니다.
+	}
+}
+
 public class Extends03 
 {
 	public static void main(String[] args)
 	{
-		
+		SubA sa = new SubA();
+		sa.printInfo();
 	}
 }
