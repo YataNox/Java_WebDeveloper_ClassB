@@ -28,6 +28,11 @@ class CardDeck
 		}
 		
 	}
+	
+	public Card pick(int i)
+	{
+		return cards[i];
+	}
 }
 
 public class PlayCard 
@@ -38,5 +43,6 @@ public class PlayCard
 		d.shuffle();
 		System.out.println(d.cards[12].toString());
 		System.out.println(d.cards[51]);
+		System.out.println(d.pick(1));
 	}
 }
