@@ -41,8 +41,52 @@ public class PlayCard
 	{
 		CardDeck d = new CardDeck();
 		d.shuffle();
+		/*
 		System.out.println(d.cards[12].toString());
 		System.out.println(d.cards[51]);
 		System.out.println(d.pick(1));
+		System.out.printf("%s", d.pick(0));
+		System.out.printf("%s", d.pick(1));
+		System.out.printf("%s", d.pick(2));
+		System.out.printf("%s", d.pick(3));
+		System.out.printf("%s", d.pick(4));
+		*/
+		
+		Card [] player1 = new Card[5];
+		Card [] player2 = new Card[5];
+		Card [] player3 = new Card[5];
+		Card [] player4 = new Card[5];
+		
+		// 카드를 1명당 5장씩 분배하고 한 명당 1줄에 보유카드를 출력해서
+		// 네 줄을 출력해주세요
+		int k = 0;
+		for(int i = 0; i < player1.length; i++)
+		{
+			player1[i] = d.pick(k++);
+			player2[i] = d.pick(k++);
+			player3[i] = d.pick(k++);
+			player4[i] = d.pick(k++);
+		}
+		
+		System.out.print("player1 : ");
+		for(int j = 0; j < player1.length; j++)
+			System.out.print(player1[j] + " ");
+		System.out.println();
+		
+		System.out.print("player2 : ");
+		for(int j = 0; j < player2.length; j++)
+			System.out.print(player2[j] + " ");
+		System.out.println();
+		
+		System.out.print("player3 : ");
+		for(int j = 0; j < player3.length; j++)
+			System.out.print(player3[j] + " ");
+		System.out.println();
+		
+		System.out.print("player4 : ");
+		for(int j = 0; j < player4.length; j++)
+			System.out.print(player4[j] + " ");
+		System.out.println();
+		
 	}
 }
