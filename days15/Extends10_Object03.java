@@ -51,7 +51,7 @@ public class Extends10_Object03
 		else
 		System.out.println("p1 변수와 p2 변수는 다릅니다.(equals)");
 		
-		// equals 메소드는 Object 클래스으 메서드로서 최초는 레퍼런스 값(주소)들의
+		// equals 메소드는 Object 클래스의 메서드로서 최초는 레퍼런스 값(주소)들의
 		// 비교를 정의하고 있습니다.
 		// String 클래스는 이미 equals 메서드를 실제 값의 비교로 오버라이딩이 되어 있으며
 		// 기타 다른 사용자 정의 클래스에서는 별도로 equals를 실제 값으로 비교하도록
