@@ -30,5 +30,9 @@ public class Extends10_Object02
 		System.out.println("오버라이딩 되지 않은 toString() => " + obj.toString());
 		Point p = new Point(30, 20);
 		System.out.println("오버라이딩 된 toString() => " + p.toString());
+		// .toString()은 print에서 사용되거나 다른 문자열과 '+' 연산될 때 생량 가능합니다.
+		// System.out.println("오버라이딩 된 toString() => " + p);
+		String msg = "Point => " + p;
+		System.out.println(msg);
 	}
 }
