@@ -46,7 +46,7 @@ public class Extends09_TypeCasting02
 		// 4. 만약 부모 클래스의 인스턴스 주소를 자식 클래스의 레퍼런스 변수에 저장하려면
 		// 강제 캐스팅을 이용하여 저장은 할 수 있습니다.
 		SuperF super3 = new SuperF();
-		SubF sub3 = (SubF)super3;
+		//SubF sub3 = (SubF)super3;
 		// 현재는 에러가 없는 걸로 나타나지만, 실행 시에 런타임 에러가 발생합니다.
 		
 		// 실제 Heap 저장된 인스턴스의 타입이 자식 클래스가 아니면 프로그램 실행 중
@@ -57,5 +57,17 @@ public class Extends09_TypeCasting02
 		SuperF super4 = new SubF();
 		SubF sub4 = (SubF)super4;
 		// 자식 레퍼런스 <- (타입 캐스팅) 부모 레퍼런스 <- 자식 인스턴스의 주소
+		// instanceof 연산자
+		SuperF super5 = new SuperF(); // 실행 결과 : 형변환 실패
+		// SuperF super5 = new SubF(); // 형변환 성공
+		if(super5 instanceof SubF)
+		{
+			SubF sub5 = (SubF)super5;
+			System.out.println("형변환 성공~!");
+		}
+		else
+		{
+			System.out.println("형변환을 실패");
+		}
 	}
 }
