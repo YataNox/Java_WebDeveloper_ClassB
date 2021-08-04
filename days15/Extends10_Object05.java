@@ -99,7 +99,7 @@ class Buyer
 			itemList = itemList + " " + p1;
 			// itemList = itemList + " " p1.toString();
 		}
-		System.out.println("지출 총액 : " + sum + ", 구매 목록 : " + itemList);
+		System.out.println("지출 총액 : " + sum + ", 구매 목록 : " + itemList /*item.toString()*/);
 		System.out.println();
 	}
 	
@@ -145,6 +145,7 @@ public class Extends10_Object05
 		
 		Buyer b1 = new Buyer();
 		b1.buy(t1);
+		b1.buy(t2);
 		b1.buy(new Computer());
 		b1.buy(c);
 		b1.buy(a);
