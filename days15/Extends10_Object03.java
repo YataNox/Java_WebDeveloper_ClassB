@@ -39,10 +39,16 @@ public class Extends10_Object03
 		// 실제 객체의 값을 비교하기 위한 equals 메소드를 사용하면 참조 값이 서로 다른
 		// 객체의 실제 데이터를 비교하여 동일한 데이터를 가지고 있는지 확인할 수 있습니다.
 		if(s3.equals(s4))
-			System.out.println("s3 변수와 s4 변수는 같습니다.(equals");
+			System.out.println("s3 변수와 s4 변수는 같습니다.(equals)");
 		else
-		System.out.println("s3 변수와 s4 변수는 다릅니다.(equals");
+		System.out.println("s3 변수와 s4 변수는 다릅니다.(equals)");
 		
+		Point p1 = new Point(10, 20);
+		Point p2 = new Point(10, 20);
 		
+		if(p1.equals(p2))
+			System.out.println("p1 변수와 p2 변수는 같습니다.(equals)");
+		else
+		System.out.println("p1 변수와 p2 변수는 다릅니다.(equals)");
 	}
 }
