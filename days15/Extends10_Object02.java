@@ -26,6 +26,9 @@ public class Extends10_Object02
 {
 	public static void main(String[] args)
 	{
-		
+		UserClass_B obj = new UserClass_B();
+		System.out.println("오버라이딩 되지 않은 toString() => " + obj.toString());
+		Point p = new Point(30, 20);
+		System.out.println("오버라이딩 된 toString() => " + p.toString());
 	}
 }
