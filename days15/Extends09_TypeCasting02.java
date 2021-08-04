@@ -69,5 +69,11 @@ public class Extends09_TypeCasting02
 		{
 			System.out.println("형변환을 실패");
 		}
+		
+		SuperF super6 = new SubF();
+		SubF sub6 = new SubF();
+		
+		SuperF super7 = sub6;
+		SubF sub = (SubF)super6;
 	}
 }
