@@ -14,5 +14,35 @@ public class Extends10_Object03
 			System.out.println("n1 변수와 n2 변수는 같습니다.");
 		else
 			System.out.println("n1 변수와 n2 변수는 다릅니다.");
+		
+		String s1 = "Hello";
+		String s2 = "Hello";
+		if(s1 == s2)
+			System.out.println("s1 변수와 s2 변수는 같습니다.");
+		else
+			System.out.println("s1 변수와 s2 변수는 다릅니다.");
+		// s1에는 HEAP 영역에 "Hello"를 저장한 후 그 주소가 리턴되어 저장됩니다.
+		// s2에는 이미 HEAP 영역에 "Hello"가 저장되어 있으므로 그 주소가 저장됩니다.\
+		// 이는 모두 new 키워드가 없어서 새로운 공간이 안 생겼기 때문에 일어나는 현상입니다.
+		
+		String s3 = new String("Hello");
+		String s4 = new String("Hello");
+		if(s3 == s4)
+			System.out.println("s3 변수와 s4 변수는 같습니다.");
+		else
+			System.out.println("s3 변수와 s4 변수는 다릅니다.");
+		// 앞선 명령과 달리 이번엔 new 키워드를 사용하여 서로 다른 공간에 Hello를
+		// 저장하고 각각의 주소를 s3와 s4에 저장합니다.
+		// 결국 (==)이 연산자는 글자들의 비교가 아니라 레퍼런스 주소의 비교라는
+		// 의미입니다.
+		
+		// 실제 객체의 값을 비교하기 위한 equals 메소드를 사용하면 참조 값이 서로 다른
+		// 객체의 실제 데이터를 비교하여 동일한 데이터를 가지고 있는지 확인할 수 있습니다.
+		if(s3.equals(s4))
+			System.out.println("s3 변수와 s4 변수는 같습니다.(equals");
+		else
+		System.out.println("s3 변수와 s4 변수는 다릅니다.(equals");
+		
+		
 	}
 }
