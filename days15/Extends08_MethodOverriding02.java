@@ -51,7 +51,9 @@ public class Extends08_MethodOverriding02
 		// c.super.crying(); 에러
 		
 		// 부모 클래스의 레퍼런스 변수는 자식 클래스의 객체의 주소를 저장할 수 있습니다.
-		Animal2 a = d; // 이것을 상속의 다형성이라고 합니다.
+		Animal2 a = d; // Animal2 a = new Dog2();
+		// 이것을 상속의 다형성이라고 합니다.
+		
 		// 이때 a.crying()을 실행하면 자식 클래스에서 오버라이딩된 메소드가
 		// 우선적으로 실행됩니다.
 		a.crying();
