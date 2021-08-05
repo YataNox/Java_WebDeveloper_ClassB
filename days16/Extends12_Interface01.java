@@ -25,12 +25,29 @@ interface InterA
 	public abstract void test();
 }
 
-
+// 인터페이스를 상속(구현)하는 클래스는 상속(구현)할 클래스 앞에
+// extends 대신 implements를 씁니다.
+class SubA implements InterA
+{
+	public void test()
+	{
+		System.out.println("SubA 클래스의 test 메소드 실행");
+	}
+}
 
 public class Extends12_Interface01 
 {
 	public static void main(String[] args)
 	{
+		// 인터페이스는 객체를 생성할 수 없습니다.
+		// 1. 생성자가 없으므로 객체 생성 불가
+		// 2. 추상 메소드를 포함할 수 있기때문에...
+		// Inter A a = new InterA(); // 에러
 		
+		// 상속을 통한 다형성 구현에만 인터페이스가 활용됨
+		// 부모 인터페이스의 레퍼런스를 사용하여 자식 클래스의 객체를 참조 가능
+		InterA a = new SubA();
+		// 부모 인터페이스의 레퍼런스를 사용하여 자식 클래스의 오버라이딩된 메소드를 호출
+		a.test();
 	}
 }
