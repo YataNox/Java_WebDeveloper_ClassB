@@ -108,5 +108,40 @@ public class StringClass
 		s = "java.lang.Object";
 		System.out.println("\n10. " + s + "문자열중 '.'의 마지막 위치 -> " + s.lastIndexOf('.'));
 		// 문자열의 일부 또는 문자가 마지막으로 확인된 위치
+		
+		// 11.
+		s = "Hello";
+		System.out.println("\n11. " + s + "s.replace(\'H\', \'C\') -> " + s.replace('H', 'C'));
+		s2 = s.replace('H', 'C'); // H를 C로 치환
+		System.out.println("11. " + s + " " + s2);
+		System.out.println("11. " + s + "s.replace(\"ll\", \"LL\") -> " + s.replace("ll", "LL"));
+		s2 = s.replace("ll", "LL");
+		System.out.println("11. " + s + " " + s2);
+		// String 클래스는 보관하고 있는 문자열을 이용하여 변화를 주는 메소드들에서
+		// 변화된 내용이 업데이트 되듯 저장되는 것이 아니고 대부분 새로운 변화된 문자열
+		// 객체로 만들어 리턴합니다.
+		// 따라서 다양한 메서드들이 있지만 실행 결과가 원본 s 문자열을 변경시키지는 
+		// 못합니다.
+		
+		// 12.
+		String animal = "dog,cat,bear";
+		String[] a = animal.split(",");
+		// ','을 기준으로 문자열을 분리 - 문자열 배열로 만듦
+		System.out.print("\n12. ");
+		for(int i = 0; i < a.length; i++)
+			System.out.printf("%s ", a[i]);
+		System.out.println();
+		
+		// 13.
+		
+		
+		// 14.
+		
+		
+		// 15.
+		
+		
+		// 16.
+		
 	}
 }
