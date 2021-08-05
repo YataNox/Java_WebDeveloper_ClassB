@@ -47,7 +47,14 @@ public class Extends12_Interface03
 		InterC_Super1 s1 = new SubC2();
 		InterC_Super2 s2 = new SubC2();
 		InterC_Sub s3 = new SubC2();
-		
-		
+		// 인터페이스를 다중 상속한 경우 부모 인터페이스는 자신의 추상 메소드만을
+		// 접근할 수 있습니다.
+		s1.interC_Super1Test();
+		s2.interC_Super2Test();
+		// s1.interC_Super2test(); 에러 - 다른 인터페이스의 추상 메소드
+		// s2.interC_Super1test(); 에러 - 다른 인터페이스의 추상 메소드
+		s3.interC_SubTest();
+		s3.interC_Super1Test();
+		s3.interC_Super2Test();
 	}
 }
