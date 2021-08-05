@@ -35,7 +35,7 @@ public class StringClass
 		
 		// 4.
 		String a1 = new String("ABCD");
-		String a2 = new String("BCD");
+		String a2 = new String("CCD");
 		String a3 = new String("ABCD");
 		System.out.println("4. a1.compareTo(a2) ? " + a1.compareTo(a2));
 		System.out.println("4. a2.compareTo(a3) ? " + a2.compareTo(a3));
@@ -49,5 +49,23 @@ public class StringClass
 		// 크기를 결정하는 방법은 비교되는 두 글자들의 뺄셈을 연산하여, 결과가 음수이면
 		// 두 번째 글자가 크다고하고 양수이면 앞 쪽 글자가 크다고 한다.
 		// ex) 'A' - 'B' => -1 뒤에서 빼려는 글자가 크다
+		
+		// 5.
+		s2 = s.concat(" World");
+		// concat 메서드는 원본 s에 있는 문자열에 World를 이어붙이기 하고 s에
+		// 업데이트해서 저장하는 것이 아니라
+		// 이어붙이기된 새로운 문자열 객체를 만들어서 새로운 레퍼런스 변수에 저장할 수
+		// 있게 리턴해줍니다.
+		// String 클래스의 특성상 s에 있는 Hello 원본은 보호되고 있습니다.
+		System.out.println("5." + s2);
+		System.out.println("5." + s);
+		
+		// 6.
+		s = new String("abcdefg");
+		boolean b = s.contains("bc");
+		// 괄호 안의 문자열이 메소드 호출 객체가 갖고 있는 문자열의 일부를 포함하고
+		// 있다면 true를 리턴해주는 메소드.
+		// boolean b = new String("abcdefg").contains("bc");
+		System.out.println("6. 문자열 " + s + "에는 \"bc 가 포함되어 있다? " + b);
 	}
 }
