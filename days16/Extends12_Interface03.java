@@ -57,4 +57,8 @@ public class Extends12_Interface03
 		s3.interC_Super1Test();
 		s3.interC_Super2Test();
 	}
+	// 일반 클래스는 extends로 상속할 때 다중 상속이 안 될뿐
+	// 클래스의 extends와 interface의 impolements도 동시 구현이 가능합니다.
+	// class 자식 클래스명 extends 부모클래스명 implements 부모인터페이스명
+	// 더불어 인터페이스는 여러개를 동시 implements 할 수 있습니다.
 }
