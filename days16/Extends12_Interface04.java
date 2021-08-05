@@ -123,5 +123,15 @@ public class Extends12_Interface04
 		scv1.repair(tank1);
 		scv1.repair(dropship1);
 		scv1.repair(scv2);
+		// scv1.repair(marine1); 에러
+		
+		System.out.printf("%s : ", tank1.toString());
+		tank1.prnHp();
+		System.out.printf("%s : ", dropship1.toString());
+		dropship1.prnHp();
+		System.out.printf("%s : ", marine1.toString());
+		marine1.prnHp();
+		System.out.printf("%s : ", scv1.toString());
+		scv1.prnHp();
 	}
 }
