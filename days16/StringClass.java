@@ -66,6 +66,22 @@ public class StringClass
 		// 괄호 안의 문자열이 메소드 호출 객체가 갖고 있는 문자열의 일부를 포함하고
 		// 있다면 true를 리턴해주는 메소드.
 		// boolean b = new String("abcdefg").contains("bc");
-		System.out.println("6. 문자열 " + s + "에는 \"bc 가 포함되어 있다? " + b);
+		System.out.println("6. 문자열 " + s + "에는 \"bc\" 가 포함되어 있다? " + b);
+		
+		// 7.
+		s = new String("Hello.txt");
+		b = s.endsWith("txt");
+		// 메서드 호출 객체가 갖고 있는 문자열이 괄호 안의 문자열로 끝나면 true를
+		// 리턴해주는 메소드
+		System.out.println("7. 문자열 " + s + "는 \"txt\"로 끝난다 ? " + b);
+		
+		// 8.
+		s = new String("Hello");
+		// 대소문자 구분해서 비교
+		System.out.println("8. " + s + "는 \"Hello\"와 같다 ? " + s.equals("Hello"));
+		System.out.println("8. " + s + "는 \"Hello\"와 같다 ? " + s.equals("hello"));
+		// 대소문자를 구분하지 않고 비교
+		System.out.println("8. " + s + "는 \"HELLO\"와 같다 ? " + s.equalsIgnoreCase("Hello"));
+		System.out.println("8. " + s + "는 \"Hello\"와 같다 ? " + s.equalsIgnoreCase("Hello"));
 	}
 }
