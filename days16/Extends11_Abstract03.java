@@ -55,6 +55,10 @@ public class Extends11_Abstract03
 {
 	public static void main(String[] args)
 	{
-		
+		// 어댑터 클래스를 상속받은 클래스도 추상 클래스의 자식(손자)클래스가 됩니다.
+		AbstractA obj = new AbstractA_Sub2();
+		obj.test1();
+		// 할아버지 손자간 다형성을 구현하여
+		// 물려주고 오버라이딩된 메서드를 할아버지 레퍼런스가 사용할 수 있습니다.
 	}
 }
