@@ -133,7 +133,12 @@ public class StringClass
 		System.out.println();
 		
 		// 13.
-		
+		s = "java.lang.Object";
+		s2 = s.substring(5,9);
+		// 원본에서 다섯번째 글자(0부터 시작)부터 8번째(9-1)까지 추출
+		System.out.println("\n13. " + s2);
+		s2 = s.substring(10); // 원본에서 열 번째 글자부터(0부터 시작) 끝까지 추출
+		System.out.println("13. " + s2);
 		
 		// 14.
 		
