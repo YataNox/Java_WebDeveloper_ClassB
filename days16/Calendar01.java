@@ -46,5 +46,13 @@ public class Calendar01
 		System.out.println("이 달의 몇 째 요일 : " + i);
 		
 		System.out.println("이 달의 마지막 날 : " + today.getActualMaximum(Calendar.DATE));
+		
+		System.out.println(Calendar.YEAR);
+		System.out.println(Calendar.MONTH);
+		System.out.println(Calendar.DATE);
+		System.out.println(Calendar.WEEK_OF_YEAR);
+		System.out.println(Calendar.WEEK_OF_MONTH);
+		System.out.println(Calendar.DAY_OF_WEEK_IN_MONTH);
 	}
+	
 }
