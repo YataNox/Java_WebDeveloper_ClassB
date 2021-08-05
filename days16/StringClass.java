@@ -1,5 +1,7 @@
 package days16;
 
+import java.util.Date;
+
 public class StringClass 
 {
 	public static void main(String[] args)
@@ -141,12 +143,15 @@ public class StringClass
 		System.out.println("13. " + s2);
 		
 		// 14.
-		
-		
-		// 15.
-		
-		
-		// 16.
-		
+		System.out.println("\n14. " + String.valueOf(true));
+		s = String.valueOf("14. " + 100);
+		System.out.println(s);
+		s = String.valueOf(100.123);
+		System.out.println("14. " + s);
+		// java.util.Date dd = new java.util.Date();
+		Date dd = new Date(); // java.util.Date
+		s = String.valueOf(dd);
+		System.out.println("14. " + s);
 	}
+	
 }
