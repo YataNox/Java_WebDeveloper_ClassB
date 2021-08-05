@@ -101,5 +101,12 @@ public class StringClass
 		// 두 번째 사용 예 : 알파벳 'e'가 문자열 s의 2번째부터 찾아서 전체 글자의 몇 번째
 		// 글자인지 구함 : 없으므로 4 리턴
 		
+		// 10.
+		s = new String("ABCDEFG");
+		System.out.println("\n10. " + s + "s.indexOf(\"CD\") -> " + s.indexOf("CD"));
+		// 문자열의 일부가 위치한 위치 값
+		s = "java.lang.Object";
+		System.out.println("\n10. " + s + "문자열중 '.'의 마지막 위치 -> " + s.lastIndexOf('.'));
+		// 문자열의 일부 또는 문자가 마지막으로 확인된 위치
 	}
 }
