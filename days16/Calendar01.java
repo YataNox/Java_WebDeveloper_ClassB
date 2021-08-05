@@ -16,5 +16,35 @@ public class Calendar01
 		// getInstance 메소드로 인스턴스의 주소를 리턴 받아씁니다.
 		// 이 후 다시 getInstance() 메소드가 실행되도 현재 HEAP에 이미 있느 ㄴ
 		// 인스턴스의 주소가 리턴됩니다.
+		Calendar tomorrow = Calendar.getInstance();
+		
+		// get 메소드는 스태틱 파이널 변수의 값을 얻어주는 메소드
+		System.out.println("연도 : " + today.get(Calendar.YEAR));
+		System.out.println("연도 : " + today.get(1));
+		int i = today.get(Calendar.MONTH);
+		System.out.println("월 : (0~11) : " + i + "월");
+		// MONTH로 얻어낼 월의 값은 1월이 0 2월이 1 ... 12월이 11로 얻어집니다.
+		System.out.println("월 : (1~12) : " + (i+1) + "월");
+		
+		i = today.get(Calendar.DATE);
+		System.out.println("이 달의 몇일 : " + i);
+		
+		i = today.get(Calendar.WEEK_OF_MONTH);
+		System.out.println("이 달의 몇째 주 : " + i);
+		
+		i = today.get(Calendar.WEEK_OF_YEAR);
+		System.out.println("금년의 몇째 주 : " + i);
+		
+		i = today.get(Calendar.DAY_OF_YEAR);
+		System.out.println("이 해의 몇 일 : " + i);
+		// 1. 일요일, 2. 월요일, 3. 화요일.......
+		
+		i = today.get(Calendar.DAY_OF_WEEK);
+		System.out.println("요일(1~7, 1:일요일) : " + i);
+		
+		i = today.get(Calendar.DAY_OF_WEEK_IN_MONTH);
+		System.out.println("이 달의 몇 째 요일 : " + i);
+		
+		System.out.println("이 달의 마지막 날 : " + today.getActualMaximum(Calendar.DATE));
 	}
 }
