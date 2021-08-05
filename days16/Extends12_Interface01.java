@@ -15,8 +15,17 @@ package days16;
 // 써서 생성합니다.
 interface InterA
 {
+	// int n1; // 에러. 일반 변수는 생성하지 못합니다.
+	// InterA(){} // 에러. 추상 메소드만 생성이 가능하고, 일반 메서드는 생성자조차도
+	// 생성이 불가능합니다.
+	// public void print(){} 에러 - 일반 메소드 선언 불가(추상 메소드만 생성 가능)
 	
+	// 인터페이스 내부에 선언할 수 있는 요소
+	public static final int num = 10;
+	public abstract void test();
 }
+
+
 
 public class Extends12_Interface01 
 {
