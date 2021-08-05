@@ -83,5 +83,11 @@ public class StringClass
 		// 대소문자를 구분하지 않고 비교
 		System.out.println("8. " + s + "는 \"HELLO\"와 같다 ? " + s.equalsIgnoreCase("Hello"));
 		System.out.println("8. " + s + "는 \"Hello\"와 같다 ? " + s.equalsIgnoreCase("Hello"));
+		
+		// 9.
+		System.out.println("\n9. " + s + "의 문자 중 \'o\'의 위치 " + s.indexOf('o'));
+		System.out.println("9. " + s + "의 문자 중 \'k\'의 위치 " + s.indexOf('k'));
+		// 메소드 호출 객체의 문자열 중에 괄호 안에 있는 문자가 몇 번째로 위치하는 지를
+		// 구해줍니다. 있으면 위치값(0부터 시작하는 정수), 없으면 -1
 	}
 }
