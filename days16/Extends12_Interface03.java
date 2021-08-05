@@ -51,8 +51,8 @@ public class Extends12_Interface03
 		// 접근할 수 있습니다.
 		s1.interC_Super1Test();
 		s2.interC_Super2Test();
-		// s1.interC_Super2test(); 에러 - 다른 인터페이스의 추상 메소드
-		// s2.interC_Super1test(); 에러 - 다른 인터페이스의 추상 메소드
+		// s1.interC_Super2test(); 에러 - 상속해주지 않은 다른 인터페이스의 추상 메소드
+		// s2.interC_Super1test(); 에러 - 상속해주지 않은 다른 인터페이스의 추상 메소드
 		s3.interC_SubTest();
 		s3.interC_Super1Test();
 		s3.interC_Super2Test();
