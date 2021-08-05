@@ -1,5 +1,10 @@
 package days16;
 
+interface Repairable
+{
+	
+}
+
 class Unit
 {
 	int hp; // 현재 체력
@@ -31,7 +36,7 @@ class AirUnit extends Unit
 	}
 }
 
-class Tank extends GroundUnit
+class Tank extends GroundUnit implements Repairable
 {
 	Tank()
 	{
@@ -43,7 +48,7 @@ class Tank extends GroundUnit
 	}
 }
 
-class Dropship extends AirUnit
+class Dropship extends AirUnit implements Repairable
 {
 	Dropship()
 	{
@@ -67,7 +72,7 @@ class Marine extends GroundUnit
 	}
 }
 
-class SCV extends GroundUnit
+class SCV extends GroundUnit implements Repairable
 {
 	SCV()
 	{
@@ -76,6 +81,23 @@ class SCV extends GroundUnit
 	public String toString()
 	{
 		return "SCV";
+	}
+	public void repair(Repairable r)
+	{
+		Unit u = (Unit)r;
+		if(u.hp != u.max_hp)
+			System.out.println(u + "의 수리를 시작합니다.");
+		else
+		{
+			System.out.println(u + "의 hp는 만땅입니다.");
+			return;
+		}
+		while(u.hp < u.max_hp)
+		{
+			u.hp += 2;
+			System.out.println("체력 2를 repair 했습니다. 현재 체력 : " + u.hp);
+		}
+		System.out.println(u +" : 수리 완료");
 	}
 }
 
@@ -87,6 +109,7 @@ public class Extends12_Interface04
 		Dropship dropship1 = new Dropship();
 		Marine marine1 = new Marine();
 		SCV scv1 = new SCV();
+		SCV scv2 = new SCV();
 		
 		System.out.printf("%s : ", tank1.toString());
 		tank1.prnHp();
@@ -96,5 +119,9 @@ public class Extends12_Interface04
 		marine1.prnHp();
 		System.out.printf("%s : ", scv1.toString());
 		scv1.prnHp();
+		
+		scv1.repair(tank1);
+		scv1.repair(dropship1);
+		scv1.repair(scv2);
 	}
 }
