@@ -22,6 +22,11 @@ public class Calendar03
 		printTime(time1);
 		printTime(time2);
 		// 메소드를 제작하되 밀리세컨도 출력해주세요
+		
+		System.out.println(time1.getTimeInMillis());
+		System.out.println(time2.getTimeInMillis());
+		long dif  = (time2.getTimeInMillis() - time1.getTimeInMillis()) / 1000;
+		System.out.println("time1과 time2의 차이는 " + dif + "초 입니다.");
 	}
 	public static void printTime(Calendar c)
 	{
