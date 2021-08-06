@@ -18,6 +18,7 @@ public class Calendar05
 		Calendar sDay = Calendar.getInstance(); // 출력할 달력의 시작 날짜(1일)
 		Calendar eDay = Calendar.getInstance(); // 출력할 달력의 끝 날짜(말일)
 		
+		// while(true) {
 		sDay.set(year, month - 1, 1);
 		eDay.set(year, month, 1);
 		eDay.add(Calendar.DATE, -1);
@@ -44,7 +45,7 @@ public class Calendar05
 			System.out.println("\n--------------------------------------------");
 			System.out.print("[이전 달(1)] | [다음 달(2)] | [종료(3)] : ");
 			input = sc.nextInt();
-			/*
+			/* 방법 1
 			if(input == 3)
 				break;
 			if(input == 1)
@@ -52,28 +53,41 @@ public class Calendar05
 			if(input == 2)
 				month++;
 			*/
-			//Calendar temp = Calendar.getInstance();
+			Calendar temp = Calendar.getInstance();
 			// 이전 달과 다음 달에 대한 계산 후 출력이 이어지도록 캘린더 객체로 코딩하세요
 			if(input == 3)
 				break;
+			
+			temp.set(year, month - 1, 1); // 현재 년과 월로 날짜 세팅
 			if(input == 1)
 			{
+				/* 방법 2
 				sDay.add(Calendar.MONTH, -1);
 				eDay.add(Calendar.DATE, 1);
 				eDay.add(Calendar.MONTH, -1);
 				eDay.add(Calendar.DATE, -1);
 				year = sDay.get(Calendar.YEAR);
 				month = sDay.get(Calendar.MONTH + 1);
+				*/
+				// 방법 3
+				temp.add(Calendar.MONTH, -1); // 이전달 계산
 			}	
+			
 			if(input == 2)
 			{
+				/* 방법 2
 				sDay.add(Calendar.MONTH, 1);
 				eDay.add(Calendar.DATE, 1);
 				eDay.add(Calendar.MONTH, 1);
 				eDay.add(Calendar.DATE, -1);
 				year = sDay.get(Calendar.YEAR);
 				month = sDay.get(Calendar.MONTH +1);
+				*/ 
+				// 방법 3
+				temp.add(Calendar.MONTH, 1); // 다음 달 계산
 			}
+			year = temp.get(Calendar.YEAR);
+			month = temp.get(Calendar.MONTH +1);
 		}
 		System.out.println("프로그램 종료");
 	}
