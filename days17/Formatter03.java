@@ -41,5 +41,13 @@ public class Formatter03
 		
 		number = 123456.0;
 		System.out.printf("%19s : %f -> %s\n", "#,###", number, df.format(number));
+		
+		// #을 이용한 소수점 표시 : #의 갯수보다 표시할 숫자가 많으면 # 갯수만큼 표시
+		// #의 갯수보다 표시할 숫자가 적으로 숫자있는 만큼만 표시
+		number = 123456.7128;
+		df = new DecimalFormat("#,###.###");
+		System.out.printf("%19s : %f -> %s\n", "#,###.###", number, df.format(number));
+		number = 123456.7;
+		System.out.printf("%19s : %f -> %s\n", "#,###.###", number, df.format(number));
 	}
 }
