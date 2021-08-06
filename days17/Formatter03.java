@@ -49,5 +49,10 @@ public class Formatter03
 		System.out.printf("%19s : %f -> %s\n", "#,###.###", number, df.format(number));
 		number = 123456.7;
 		System.out.printf("%19s : %f -> %s\n", "#,###.###", number, df.format(number));
+		
+		number = 1234;
+		df = new DecimalFormat("￦#,###원"); // 단위 또는 기호 첨가
+		System.out.printf("%19s : %f -> %s\n", "￦#,###원", number, df.format(number));
+		
 	}
 }
