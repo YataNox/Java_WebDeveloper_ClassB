@@ -21,10 +21,16 @@ public class Calendar02
 		
 		// 위 date1에 설정된 날짜를 0000년 0월 0일 형식으로 출력해주세요
 		// system.out.println()안에 한번에 구성해서 출력해주세요.
-		System.out.println("date1 : " + date1.get(Calendar.YEAR) + "년 " + (date1.get(Calendar.MONTH) + 1) + "월 "
+		printDate(date1);
+		printDate(date2);
+		/*System.out.println("date1 : " + date1.get(Calendar.YEAR) + "년 " + (date1.get(Calendar.MONTH) + 1) + "월 "
 				+ date1.get(Calendar.DATE) + "일 " + weekday[date1.get(Calendar.DAY_OF_WEEK)] + "요일");
 		System.out.println("date2 : " + date2.get(Calendar.YEAR) + "년 " + (date2.get(Calendar.MONTH) + 1) + "월 "
-				+ date2.get(Calendar.DATE) + "일 " + weekday[date2.get(Calendar.DAY_OF_WEEK)] + "요일");
+				+ date2.get(Calendar.DATE) + "일 " + weekday[date2.get(Calendar.DAY_OF_WEEK)] + "요일");*/
 	}
-	
+	public static void printDate(Calendar c)
+	{
+		System.out.println(c.get(Calendar.YEAR) + "년 " + (c.get(Calendar.MONTH) + 1) + "월 "
+				+ c.get(Calendar.DATE) + "일 " + weekday[c.get(Calendar.DAY_OF_WEEK)] + "요일");
+	}
 }
