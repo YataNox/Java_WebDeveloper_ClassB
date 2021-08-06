@@ -20,5 +20,24 @@ public class Formatter03
 		// 소수점 아래에 대해서는 반대로 0의 갯수만큼만 소수점 아래 자리수를 표시.
 		// 0 갯수로 인해 표시되지 못하는 소수점 자리 중 가장 윗 자리에서 반올림
 		// 남는 자리에 강제로 0으로 채우는 방식은 동일 0.1234(0.00) -> 0.12 0.1(0.00) -> 0.10
+		
+		number = 123456.71289;
+		df = new DecimalFormat("0.000");
+		System.out.printf("%19s : %f -> %s\n", "0.000", number, df.format(number));
+		
+		number = 123456789.0;
+		df = new DecimalFormat("0,000"); // 천단위 구분 기호 표시 패턴
+		System.out.printf("%19s : %f -> %s\n", "0,000", number, df.format(number));
+		
+		number = 89.0;
+		df = new DecimalFormat("0,000"); // 천단위 구분 기호 표시 패턴
+		System.out.printf("%19s : %f -> %s\n", "0,000", number, df.format(number));
+		
+		df = new DecimalFormat("#,###"); // 무효의 0을 표시하지 않는 #을 0대신 사용
+		df = new DecimalFormat("#,###"); 
+		System.out.printf("%19s : %f -> %s\n", "#,###", number, df.format(number));
+		// 십의 자리든 100의 자리든 표시할 숫자가 있을 때만 표시 - 강제 0표시 안함
+		// 표시할 숫자가 1000을 넘어갈때만 (,)를 표시
+		
 	}
 }
