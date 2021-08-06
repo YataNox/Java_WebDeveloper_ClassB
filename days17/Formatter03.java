@@ -54,5 +54,9 @@ public class Formatter03
 		df = new DecimalFormat("￦#,###원"); // 단위 또는 기호 첨가
 		System.out.printf("%19s : %f -> %s\n", "￦#,###원", number, df.format(number));
 		
+		number = -1234.2;
+		df = new DecimalFormat("#,###.##+;#,###.##-"); // 음수와 양수 표시
+		System.out.printf("%19s : %f -> %s\n", "#,###.##+;#,###.##-", number, df.format(number));
+		
 	}
 }
