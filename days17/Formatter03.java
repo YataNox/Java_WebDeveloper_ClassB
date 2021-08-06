@@ -39,5 +39,7 @@ public class Formatter03
 		// 십의 자리든 100의 자리든 표시할 숫자가 있을 때만 표시 - 강제 0표시 안함
 		// 표시할 숫자가 1000을 넘어갈때만 (,)를 표시
 		
+		number = 123456.0;
+		System.out.printf("%19s : %f -> %s\n", "#,###", number, df.format(number));
 	}
 }
