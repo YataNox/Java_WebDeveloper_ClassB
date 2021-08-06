@@ -38,5 +38,19 @@ public class WrapperEx01
 		System.out.println("BYTES = " + Integer.BYTES + " bytes");
 		// 자료형
 		System.out.println("TYPE = " + Integer.TYPE);
+		
+		int i = 10;
+		Integer inti = (Integer)i; // Integer inti = Integer.valueOf(i);
+		
+		int i3 = inti + 10; // 참조형과 기본 형간의 연산 가능 
+		System.out.println(i3); // 20
+		
+		Integer inti2 = new Integer(20);
+		System.out.println("inti2 = " + inti2); // inti2 = 20
+		int i4 = (int)inti2; // 참조형을 기본형응로 형변환도 가능(형변환 생략 가능)
+		System.out.println("i4 = " +i4); // i4 = 20
+		
+		Integer inti3 = inti2 + i3;
+		System.out.println("inti2 + i3 = " + inti3); // inti2 +i3 = 40
 	}
 }
