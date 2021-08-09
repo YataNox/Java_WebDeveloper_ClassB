@@ -15,7 +15,6 @@ public class Exception08
 		// 문자를 입력 받아 날짜로 변환하는 코드 참조
 		Scanner sc = new Scanner(System.in);
 		System.out.print("숫자를 입력하세요 : ");
-		
 		while(true)
 		{
 			try
@@ -28,6 +27,7 @@ public class Exception08
 			{
 				sc.next();
 				System.out.println("잘못 입력했습니다.");
+				System.out.print("재입력 : ");
 			}
 		}
 		
