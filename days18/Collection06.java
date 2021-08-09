@@ -1,7 +1,10 @@
 package days18;
 
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
 
 public class Collection06 
 {
@@ -22,7 +25,7 @@ public class Collection06
 		// - Iterator 객체는 컬렉션 내부의 데이터를 순회할 수 있는 객체
 		Iterator<Integer> iter = lotto.iterator();
 		while(iter.hasNext())
-			System.out.printf("%d		", iter.next());
+			System.out.printf("%d ", iter.next());
 		// 제어권을 넘겨받아서 위와 같이 한 번 리스트를 모두 순회하면,
 		// iter = lotto.iterator();를 통해서 다시 방문 필요할 때 제어권을 다시 얻어내야합니다.
 		System.out.println();
@@ -36,5 +39,12 @@ public class Collection06
 		// lotto 부분 : 왼쪽 변수에 차례로 하나씩 전달해 줄수 있는 아이템을 보유한 컬렉션 또는 배열
 		// 오른쪽 리스트 또는 배열의 값을 차례로 하나씩 왼쪽 변수에 값을 전달하면서 1회의 반복 실행을 진행합니다.
 		System.out.println();
+		
+		// 해쉬세트 컬렉션에는 sort 메서드가 없습니다. 따라서 링크드 리스트
+		// 부모 클래스인 List 클래스에 전해줘서 리트스 변환 과정을 거치고,
+		// Collections.sort로 정렬을 수행해야합니다.
+		List list = new LinkedList(lotto);
+		Collections.sort(list);
+		System.out.println(list);
 	} 
 }
