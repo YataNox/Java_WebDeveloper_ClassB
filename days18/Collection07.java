@@ -25,5 +25,13 @@ public class Collection07
 		
 		// 사용 예의 확장1
 		// HashMap<Integer, ArrayList<String>> kk = new Hashmap<>();
+		
+		// Hashtable, HashMap 클래스는 put 메소드를 사용하여 데이터를 추가
+		ht.put("One", 1); ht.put("Two", 2); ht.put("Three", 3);
+		hm.put(1, "One"); hm.put(2, "Two"); hm.put(3, "Three");
+		
+		// Hashtable, HashMap 클래스는 get 메소드에 Key값을 전달하여 Value를 반환
+		System.out.printf("\"One\" = %d\n", ht.get("One"));
+		System.out.printf("1 = %s\n", hm.get(1));
 	}
 }
