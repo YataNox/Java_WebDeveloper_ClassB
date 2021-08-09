@@ -1,5 +1,8 @@
 package days18;
 
+import java.util.ArrayList;
+import java.util.Vector;
+
 // 컬렉션 클래스
 // 자료구조를 구현하고 있는 클래스
 // 자료구조 : 각각의 데이터들을 효율적으로 저장하고 운용하기 위한 방법론
@@ -38,6 +41,26 @@ public class Collection01
 {
 	public static void main(String[] args)
 	{
+		// 동적 배열의 객체 생성 초기 값으로 크기를 지정할 수 있지만 통산 크기 지정없이 사용합니다.
+		Vector v = new Vector();
+		ArrayList a = new ArrayList();
 		
+		// 데이터 입력 add 메소드를 사용하여 데이터를 입력
+		v.add(10);
+		v.add(20);
+		v.add(30);
+		// 데이터의 저장은 add로 저장하는 데이터의 레퍼런스 값을 저장합니다.
+		a.add(10);
+		a.add(20);
+		a.add(30);
+		
+		// Vector, ArrayList 클래스의 size 메소드 : 현재 저장되어 있는 데이터의 개수를 반환
+		for(int i = 0; i < v.size(); i++)
+			System.out.printf("v[%d] = %d\t\t", i, v.get(i));
+		
+		// Vector, ArrayList 클래스의 get 메소드 : 특정 인덱스에 저장되어 있는 데이터를 반환
+		System.out.println();
+		for(int i = 0; i < a.size(); i++)
+			System.out.printf("a[%d] = %d\t\t", i, a.get(i));
 	}
 }
