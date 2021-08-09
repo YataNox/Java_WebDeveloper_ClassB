@@ -27,6 +27,13 @@ package days18;
 // (검색을 위해서 사용, Key의 값은 중복을 허용하지 않음, Value값은 중복을 허용)
 // - Hashtable, HashMap(가장 많이 사용)
 
+// 5. Vector, ArrayList 클래스
+// - 두 개의 클래스는 동일한 기능을 제공
+// - 쓰레드 동기화의 지원여부 크기의 제약없이 데이터를 저장(동적으로 크기를 확장)
+// - 배열과 같이 인덱스를 기반으로 데이터를 접근
+// - 데이터의 중복을 허용
+// - 데이터의 입력 순서를 유지
+
 public class Collection01 
 {
 	public static void main(String[] args)
