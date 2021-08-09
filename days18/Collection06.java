@@ -23,5 +23,7 @@ public class Collection06
 		Iterator<Integer> iter = lotto.iterator();
 		while(iter.hasNext())
 			System.out.printf("%d		", iter.next());
+		// 제어권을 넘겨받아서 위와 같이 한 번 리스트를 모두 순회하면,
+		// iter = lotto.iterator();를 통해서 다시 방문 필요할 때 제어권을 다시 얻어내야합니다.
 	} 
 }
