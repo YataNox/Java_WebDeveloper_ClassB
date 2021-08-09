@@ -32,5 +32,17 @@ public class Collection02
 		System.out.printf("i0 -> %.1f\n", i1);
 		System.out.printf("i0 -> %s\n", i2);
 		
+		// 위와 같이 하나의 ArrayList에 여러 자료형태를 섞어서 저장하고 사용할 수 있습니다.
+		// 다만 자료형을 섞어서 저장하고 사용할 경우 위의 에러 내역과 같이 꺼내고, 형변환할 때 자료형이
+		// 맞지 않아 에러가 발생하거나 형변환을 하지 않아 에러가 발생할 확률이 높아집니다.
+		// 그래서 보통은 자료형을 하나로만 통일해서 저장하는 형식을 사용하게 되고
+		// 규칙으로 만들어 지정한 자료형이 저장되지 못하도록 사용하기도 합니다.
+		ArrayList<Integer> list = new ArrayList<Integer>();
+		// get()으로 자료를 꺼낼 때 강제 형변환이 없어도 됩니다.
+		
+		list.add(100);
+		// list.add("String"); // 에러 다른 자료형을 저장이 안되게
+		Integer i = list.get(0); // 자료를 꺼낼 때 강제 형변환을 안써도 되게
+		
 	}
 }
