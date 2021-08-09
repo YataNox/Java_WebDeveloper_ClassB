@@ -1,5 +1,6 @@
 package days18;
 
+import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Hashtable;
 
@@ -33,5 +34,24 @@ public class Collection07
 		// Hashtable, HashMap 클래스는 get 메소드에 Key값을 전달하여 Value를 반환
 		System.out.printf("\"One\" = %d\n", ht.get("One"));
 		System.out.printf("1 = %s\n", hm.get(1));
+		
+		// Hashtable, HashMap 클래스 내부의 데이터를 반복문을 통해서 접근하는 예
+		// 1. Enumeration은 열거형 자료형식(인터페이스)입니다.
+		Enumeration<String> e1 = ht.keys();
+		while(e1.hasMoreElements())
+		{
+			// 키 값을 추출
+			String key = e1.nextElement(); // 키 값을 얻어내고
+			int value = ht.get(key); // 키 값으로 검색한 벨류 값을 얻어냅니다.
+			System.out.printf("key(%s) = Value(%d) ", key, value);
+		}
+		System.out.println();
+		// 2. for문을 활용하여 Key 값을 순회하는 방법
+		for(Integer k : hm.keySet()) // hm.keySet() : 키 값들만 모아서 리스트로 생성
+		{
+			String v = hm.get(k);
+			System.out.printf("key(%d) = Value(%s) ", k, v); 
+		}
+		
 	}
 }
