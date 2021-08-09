@@ -15,8 +15,16 @@ public class Exception01
 		for(int i = 0; i < 10; i++)
 		{
 			int j = (int)(Math.random() * 10);
-			int result = 100 / j;
-			System.out.println(result);
+			try
+			{
+				int result = 100 / j;
+				System.out.println(result);
+			}
+			catch(ArithmeticException e)
+			{
+				System.out.println("0으로 나눴습니다.");
+			}
+			// 에러가 발생하면 catch 구문안의 명령을 대신 실행하고 프로그램 실행을 계속 합니다.
 		}
 	}
 }
