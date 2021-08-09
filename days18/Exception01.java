@@ -12,6 +12,11 @@ public class Exception01
 {
 	public static void main(String[] args)
 	{
-		
+		for(int i = 0; i < 10; i++)
+		{
+			int j = (int)(Math.random() * 10);
+			int result = 100 / j;
+			System.out.println(result);
+		}
 	}
 }
