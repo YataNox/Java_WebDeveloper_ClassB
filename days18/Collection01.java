@@ -17,6 +17,16 @@ package days18;
 // 위와 같은 동적 배열을 구현하고 있는 클래스들 - Vector, ArrayList(가장 많이 사용)
 // 링크드 리스트를 구현하고 있는 클래스 - LinkedList
 
+// 3. Set 타입의 저장 방법을 구현하고 있는 클래스들
+// Set 타입 : 데이터를 저장할 때, 중복을 허용하지 않는 방법 : 
+// 검색을 위해서 사용, 중복된 값을 제거하기 위해서 사용
+// - HastSet(사용빈도 : 중), TreeSet
+
+// 4. Map 타입의 저장 방법을 구현하고 있는 클래스들
+// Map 타입 : 데이터를 Key와 Value의 형태로 저장하는 방법
+// (검색을 위해서 사용, Key의 값은 중복을 허용하지 않음, Value값은 중복을 허용)
+// - Hashtable, HashMap(가장 많이 사용)
+
 public class Collection01 
 {
 	public static void main(String[] args)
