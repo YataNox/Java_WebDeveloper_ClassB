@@ -84,7 +84,7 @@ class Calculator extends JFrame	 implements ActionListener
 		con.add(p5);
 		
 		setTitle("계산기");
-		setSize(600,500);
+		setSize(300,300);
 		setLocation(700,200);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setVisible(true);
