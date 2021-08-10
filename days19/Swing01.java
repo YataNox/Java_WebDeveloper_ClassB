@@ -27,6 +27,17 @@ class ButtonTest extends JFrame
 		// 윈도우에 올라갈 컨트롤들을 담을 바구니- 담으로 윈도우에 표시될 준비가 완료됩니다.
 		con.setLayout(new FlowLayout()); // 윈도우 프레임에 add 되어지는 순서로 한 줄로 화면 구성
 		// 줄 맞춤 설정
+		
+		// 컨테이너에 생성된 컨트롤을 순서에 맞춰 올려놓으면 화면에 표시될 준비가 완료됩니다.
+		con.add(label);
+		con.add(male);
+		con.add(female);
+		
+		setTitle("버튼 컴퍼넌트 테스트"); // 윈도우 좌측 상단에 표시된 타이틀 내용 설정
+		setSize(300, 200); // 윈도우 크기 설정 : 단위 (픽셀)
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		// 현재 위도우 종료시 프로그램까지 종료 설정
+		setVisible(true); // 화면에 윈도우를 출현 시키는 메소드
 	}
 }
 
@@ -34,6 +45,6 @@ public class Swing01
 {
 	public static void main(String[] args)
 	{
-		
+		ButtonTest a = new ButtonTest();
 	}
 }
