@@ -1,5 +1,35 @@
 package days19;
 
+import java.awt.Container;
+import java.awt.FlowLayout;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
+
+// 윈도우 프로그래밍에 필요한 윈도우 구성 요소를 상속받아 추가 기능 탑재 형식의 개발을 진행합니다.
+class ButtonTest extends JFrame
+{
+	// 윈도우 최초 회면의 구성은 대부분 생성자 메소드에서 구성합니다.
+	ButtonTest()
+	{
+		// 버튼 표면에 "남자"라는 글자가 표시된 버튼 생성
+		JButton male = new JButton("남자");
+		// 아직 화면에 버튼이 보이지 않습니다. 안보이는 곳에 생성만 해둔 상태입니다.
+		JButton female = new JButton("여자"); // 버튼 표면에 "여자"라는 글자가 표시된 버튼 생성
+		
+		JLabel label = new JLabel("당신의 성별은?"); // 안내 문구 표시용 텍스트 도구(컨트롤)
+		
+		// 원도우 위에 기타 컨트롤을 올려놓을 수 있게 해주는 객체
+		Container con = getContentPane(); // 컨테이너 새 인스턴스 생성
+		
+		// 윈도우에 올라갈 컨트롤들을 담을 바구니- 담으로 윈도우에 표시될 준비가 완료됩니다.
+		con.setLayout(new FlowLayout()); // 윈도우 프레임에 add 되어지는 순서로 한 줄로 화면 구성
+		// 줄 맞춤 설정
+	}
+}
+
 public class Swing01 
 {
 	public static void main(String[] args)
