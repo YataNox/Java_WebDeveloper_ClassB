@@ -1,66 +1,58 @@
 package days04;
 
-public class Operator04 
+public class Variable08
 {
 	public static void main(String args[])
 	{
-		// 논리연산자 &&(And), ||(Or), !(Not)
-		// 다수개의 관계(비교)연산식 결과를 조합하여 하나의 boolean 값을 결과로 얻는 연산
+		// 문자 타입의 변수 초기화 : 하나의 글자를 다른 데이터와 구분하기 위해 (' ')
+		// 작은 따옴표를 사용합니다.
+		// (" ") 큰 따옴표는 하나 이상의 데이터가 될 가능성이 있는 문자열(String)이며,
+		// 문자(char) 데이터와 구분됨
 		
-		int a = 80;
-		// a 변수의 값이 70보다 크고 100보다 작으면 true, 아니면 false 출력
-		boolean b = a > 70 && a < 100;
-		System.out.println("70 < a < 100 : " + b);
+		char ch = 'A';
+		// printf에서 문자 데이터에 쓰이는 이스케이프 문자는 %c
+		System.out.printf("ch -> %c\n", ch);
 		
-		// AND 연산자(&&)
-		// 좌항과 우항의 관계식 결과 또는 boolean 값이 모두 true인 경우 true가 결과 값
- 		// 좌항과 우항 중 하나라도 false인 경우 false가 결과 값
-		// 좌항의 비교연산 결과가 false인 경우 우항의 식을 비교하지 않습니다.
-		System.out.printf("F && F = %b\n", false && false);
-		System.out.printf("T && F = %b\n", true && false);
-		System.out.printf("F && T = %b\n", false && true);
-		System.out.printf("T && T = %b\n", true && true);
+		// 문자가 저장될 때는 문자 코드표(ASCII 코드)에 의한 이진수 코드가 저장됩니다.
+		// 이를 정수화하기 위한 캐스트 연산을 하면 , 이진수 -> 십진수로 변환된 값이
+		// 발생합니다. A -> 65
+		System.out.printf("ch -> %d\n", (int)ch);
+		// (형변환(캐스트연산) : 
+		// 데이터의 타입을 임시로 변경하는 연산 -> (자료형) 변경할값/변수)
+	
+		System.out.printf("A -> %d, a -> %d\n", (int)ch, (int)'a');
+		System.out.printf("Z -> %d, z -> %d\n", (int)'Z', (int)'z');
+		System.out.printf("0 -> %d, 9 -> %d\n", (int)'0', (int)'9');
 		
-		//OR 연산자(||)
-		// 좌항과 관계식 또는 boolean 값이 하나라도 결과가 true인 경우 true가 결과 값
-		// 좌항과 우항 모두 false 경우 false가 결과 값
-		// 좌항의 결과가 true인 경우 우항의 식을 비교하지 않습니다.
-		System.out.printf("F || F = %b\n", false || false);
-		System.out.printf("T || F = %b\n", true || false);
-		System.out.printf("F || T = %b\n", false || true);
-		System.out.printf("T || T = %b\n", true || true);
+		// 대문자 A 값에 32를 더하여 소문자 a로 변경
+		System.out.printf("%c + 32 -> %c\n", ch, ch + 32);
 		
-		//NOT 연산자(!)
-		// 단항연산자(피연산자가 1개임)
-		// 관계식의 결과를 반대값으로 결과를 냄 true -> false, false -> true
-		System.out.printf("!%b = %b\n", false, !false);
-		System.out.printf("!%b = %b\n", true, !true);
+		// 아라비아 기호 '8'에서 아라비아 기호 '0'을 빼면 정수 8이 결과로 나옵니다.
+		System.out.printf("'8' - '0' -> %d\n", '8'-'0');
 		
-		// 점수가 80점 이상이면서 90점 이하면 true, 아니면 false 출력( 이면서, 그리고 ~이고)
-		int number = 80;
-		boolean result = number >=80 && number <= 90;
-		// result = 80 <= number <= 90 X 오류
-		System.out.printf("result = %b\n", result);
+		// 실수형 변수의 초기화
+		// 자바에서 모든 실수들은 기본적으로 double 타입으로 인식합니다.
+		// float 타입으로 값을 저장하기 위해서느 float형 변수를 선언하고
+		// float형 데이터를 저장합니다.
 		
-		// 점수가 100이상이거나 50미만이면 true, 아니면 false( 이거나, 또는)
-		number = 150;
-		result = number >= 100 || number < 50;
-		// result = 100 >= number < 50 X 오류
-		System.out.printf("result = %b\n", result);
+		// float 변수에 double형 데이터 입력 -> 에러
+		// float f1 = 1.123; // 에러
+		// float 변수에 float형 데이터 입력 -> 정상실행
+		float f2 = 1.123f; // 또는 float f2 = 1.123F;
 		
-		int kor = 88, eng = 78, mat = 95;
-		double avg;
-		// 평균이 80이상이면서 영어 점수가 75점 이상이면 true 출력, 아니면 false 출력
-		avg = (kor + eng + mat) / 3.0;
-		result = (avg >= 80) && (eng >= 75);
-		System.out.printf("result = %b\n", result);
+		// float 변수에 캐스팅 연산을 적용한 double형 데이터 입력 -> 정상실행
+		float f3 = (float)1.123;
 		
-		// 국어 : 50 이상, 영어 : 60 이상, 수학 : 70 이상이면 true, 아니면 false;
-		result = (kor >= 50) && (eng >= 60) && (mat >= 70);
-		System.out.printf("result = %b\n", result);
+		// 출력 형식은 double과 같은 형식이 사용됩니다.
+		System.out.printf("%.1f\t%.1f\n", f2, f3);
 		
-		// 세과목 중 한 과목이라도 40 미만이면 true, 모두 40 이상이라면 false
-		result = (kor < 40) || (eng < 40) || (mat <40);
-		System.out.printf("result = %b\n", result);
+		// 정수들의 값의 대입
+		int a = 100;
+		byte b1 = (byte)a;
+		byte b2 = 123;
+		a = b2;
+		
+		//용량이 큰 변수값을 용량이 작은 변수값으로 넣으려고 하면 캐스팅 연산 필요
+		// 반대의 경우는 문제없이 모든 실행이 가능합니다.
 	}
 }
