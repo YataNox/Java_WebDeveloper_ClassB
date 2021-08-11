@@ -6,6 +6,7 @@ import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.StringTokenizer;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -26,9 +27,10 @@ class Calculator extends JFrame	 implements ActionListener
 	
 	Calculator()
 	{
+		// 컨테이너 및 패널 생성
 		Container con = getContentPane();
 		jt = new JTextField(16);
-		jt.setText("");
+		jt.setText("0");
 		jt.setHorizontalAlignment(SwingConstants.RIGHT); // 텍스트 필드 오른쪽 정렬
 		jt.setEditable(false); //마우스 키보드로 편집할 수 없게 설정
 		
@@ -37,28 +39,42 @@ class Calculator extends JFrame	 implements ActionListener
 		JPanel p3 = new JPanel();
 		JPanel p4 = new JPanel();
 		JPanel p5 = new JPanel();
+		JPanel p6 = new JPanel();
 		
 		Font f = new Font("굴림", Font.BOLD, 20); // 폰트 객체 생성
 		jt.setFont(f);
-		JButton b = new JButton("폰트");
-		b.setFont(f);
+		//JButton b = new JButton("폰트");
+		//b.setFont(f);
 		
-		con.setLayout(new GridLayout(5,1));
+		con.setLayout(new GridLayout(6,1));
 		p1.setLayout(new FlowLayout(FlowLayout.CENTER));
 		p2.setLayout(new GridLayout(1,4));
 		p3.setLayout(new GridLayout(1,4));
 		p4.setLayout(new GridLayout(1,4));
 		p5.setLayout(new GridLayout(1,4));
+		p6.setLayout(new GridLayout(1,4));
 		
+		// 버튼 생성, 폰트 설정
 		JButton[] btn = new JButton[10];
 		for(int i = 0; i < btn.length; i++)
+		{
 			btn[i] = new JButton(Integer.toString(i));
+			btn[i].setFont(f);
+		}
 		JButton b1 = new JButton("+");
 		JButton b2 = new JButton("-");
 		JButton b3 = new JButton("*");
 		JButton b4 = new JButton("/");
 		JButton b5 = new JButton("=");
 		JButton b6 = new JButton("C");
+		JButton b7 = new JButton("◀");
+		b1.setFont(f);
+		b2.setFont(f);
+		b3.setFont(f);
+		b4.setFont(f);
+		b5.setFont(f);
+		b6.setFont(f);
+		b7.setFont(f);
 		
 		// 각 레이아웃 위젯 추가
 		p1.add(jt);
@@ -78,18 +94,23 @@ class Calculator extends JFrame	 implements ActionListener
 		p5.add(btn[0]);
 		p5.add(b5);
 		p5.add(b4);
+		p6.add(b7);
+		
 		con.add(p1);
 		con.add(p2);
 		con.add(p3);
 		con.add(p4);
 		con.add(p5);
+		con.add(p6);
 		
+		// 컨네이터 설정
 		setTitle("계산기");
 		setSize(300,300);
 		setLocation(700,200);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setVisible(true);
 		
+		// 이벤트 추가
 		for(int i = 0; i < btn.length; i++)
 			btn[i].addActionListener(this);
 		b1.addActionListener(this);
@@ -98,30 +119,100 @@ class Calculator extends JFrame	 implements ActionListener
 		b4.addActionListener(this);
 		b5.addActionListener(this);
 		b6.addActionListener(this);
+		b7.addActionListener(this);
 		
 	}
 	public void actionPerformed(ActionEvent e) 
 	{
-		int result = 0;
 		String s = e.getActionCommand();
-		if(!s.equals("C") && !s.equals("="))
-		{
-			if((jt.getText().endsWith("+") || jt.getText().endsWith("-") || jt.getText().endsWith("*") ||
-					jt.getText().endsWith("/")) && (s.equals("+") || s.equals("-") || s.equals("*") 
-							|| s.equals("/")))
-			{
+		// 초기화 버튼이나 연산 버튼을 제외한 버튼을 눌렀을 시 
+		if(!s.equals("C") && !s.equals("=") && !s.equals("◀"))
+		{	
+			if(jt.getText().equals("-") && (s.equals("+") || s.equals("*") || s.equals("/")))
+				jt.setText("0");
+			// 연산자 중복 입력 불가 처리
+			else if((jt.getText().endsWith("+") || jt.getText().endsWith("-") || jt.getText().endsWith("*") || jt.getText().endsWith("/")) 
+					&& (s.equals("+") || s.equals("-") || s.equals("*") || s.equals("/")))
 				jt.setText(jt.getText().substring(0, jt.getText().length()-1) + s);
-			}
+			// 그 외 값은 정상 입력
 			else
-				jt.setText(jt.getText() + s);
+			{
+				// 첫 입력 값이 +*/이 아닐 경우 초기 0제거하고 입력
+				if(jt.getText().equals("0") && !(s.equals("+") || s.equals("*") || s.equals("/")))
+					jt.setText(s);
+				else
+					jt.setText(jt.getText() + s);
+			}	
 		}
+		// 백스페이스 버튼
+		if(s.equals("◀"))
+		{
+			jt.setText(jt.getText().substring(0, jt.getText().length()-1));
+		}
+		// 초기화 버튼
 		else if(s.equals("C"))
 		{
-			jt.setText("");
+			jt.setText("0");
 		}
+		// 연산 버튼
 		else if(s.equals("="))
 		{
-			jt.setText(Integer.toString(result));
+			StringTokenizer st = new StringTokenizer(jt.getText(),"+-*/", true);
+			int c = 0;
+			double sum = 0;
+			String [] num = new String[st.countTokens()];
+			
+			while(st.hasMoreTokens())
+			{
+				num[c++] = st.nextToken();
+			}
+			
+			// 음수가 첫 수 일 때 연산
+			if(num[0].equals("-"))
+			{
+				for(int i = 0; i < num.length; i++)
+				{
+					if(i % 2 == 0 && i == 0)
+					{
+						sum -= Double.parseDouble(num[1]);
+					}
+					else if(i % 2 == 0)
+					{
+						if(num[i].equals("+"))
+							sum += Double.parseDouble(num[i+1]);
+						if(num[i].equals("-"))
+							sum -= Double.parseDouble(num[i+1]);
+						if(num[i].equals("*"))
+							sum *= Double.parseDouble(num[i+1]);
+						if(num[i].equals("/"))
+							sum /= Double.parseDouble(num[i+1]);
+					}
+				}
+			}
+			// 그 외 연산
+			else
+			{
+				for(int i = 0; i < num.length; i++)
+				{
+					if(i % 2 == 0 && i == 0)
+					{
+						sum += Double.parseDouble(num[0]);
+					}
+					else if(i % 2 == 0 && i != 0)
+					{
+						if(num[i-1].equals("+"))
+							sum += Double.parseDouble(num[i]);
+						if(num[i-1].equals("-"))
+							sum -= Double.parseDouble(num[i]);
+						if(num[i-1].equals("*"))
+							sum *= Double.parseDouble(num[i]);
+						if(num[i-1].equals("/"))
+							sum /= Double.parseDouble(num[i]);
+					}
+				}
+			}
+			// 결과 출력
+			jt.setText(Double.toString(sum));
 		}
 	}
 }
