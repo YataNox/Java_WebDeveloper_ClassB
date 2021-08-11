@@ -25,12 +25,14 @@ class JCheckBoxTest extends JFrame implements ItemListener
 		jcb2 = new JCheckBox("PHP");
 		jcb3 = new JCheckBox("ASP");
 		jcb4 = new JCheckBox("SEREVLET");
+		jtf = new JTextField(30);
 		
 		Font f = new Font("굴림", Font.BOLD, 20);
 		jcb1.setFont(f);
 		jcb2.setFont(f);
 		jcb3.setFont(f);
 		jcb4.setFont(f);
+		jtf.setFont(f);
 		
 		Container con = getContentPane();
 		con.setLayout(new FlowLayout());
@@ -39,6 +41,7 @@ class JCheckBoxTest extends JFrame implements ItemListener
 		con.add(jcb2);
 		con.add(jcb3);
 		con.add(jcb4);
+		con.add(jtf);
 		
 		jcb1.addItemListener(this);
 		jcb2.addItemListener(this);
@@ -64,7 +67,8 @@ class JCheckBoxTest extends JFrame implements ItemListener
 			s = s + jcb3.getActionCommand() + " ";
 		if(jcb4.isSelected())
 			s = s + jcb4.getActionCommand() + " ";
-		System.out.println(s);
+		
+		jtf.setText("현재 선택 항목 : " + s);
 	}
 }
 
