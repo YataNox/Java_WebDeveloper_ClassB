@@ -9,6 +9,7 @@ import java.awt.event.ActionListener;
 import javax.swing.ButtonGroup;
 import javax.swing.JFrame;
 import javax.swing.JRadioButton;
+import javax.swing.JTextField;
 
 class JRadioButtonTest extends JFrame implements ActionListener
 {
@@ -17,6 +18,7 @@ class JRadioButtonTest extends JFrame implements ActionListener
 	JRadioButton jrb3;
 	JRadioButton jrb4;
 	ButtonGroup bg;
+	JTextField jtf;
 	
 	JRadioButtonTest()
 	{
@@ -25,12 +27,14 @@ class JRadioButtonTest extends JFrame implements ActionListener
 		jrb3 = new JRadioButton("글라이딩");
 		jrb4 = new JRadioButton("스쿠버");
 		bg = new ButtonGroup();
+		jtf = new JTextField(30);
 		
 		Font f = new Font("굴림", Font.BOLD, 20);
 		jrb1.setFont(f);
 		jrb2.setFont(f);
 		jrb3.setFont(f);
 		jrb4.setFont(f);
+		jtf.setFont(f);
 		
 		Container con = getContentPane();
 		con.setLayout(new FlowLayout());
@@ -43,6 +47,7 @@ class JRadioButtonTest extends JFrame implements ActionListener
 		con.add(jrb2);
 		con.add(jrb3);
 		con.add(jrb4);
+		con.add(jtf);
 		
 		
 		jrb1.addActionListener(this);
@@ -57,7 +62,14 @@ class JRadioButtonTest extends JFrame implements ActionListener
 	}
 	public void actionPerformed(ActionEvent e)
 	{
-		
+		if(jrb1.isSelected())
+			jtf.setText(jrb1.getText() + "이(가) 선택되었습니다.");
+		if(jrb2.isSelected())
+			jtf.setText(jrb2.getText() + "이(가) 선택되었습니다.");
+		if(jrb3.isSelected())
+			jtf.setText(jrb3.getText() + "이(가) 선택되었습니다.");
+		if(jrb4.isSelected())
+			jtf.setText(jrb4.getText() + "이(가) 선택되었습니다.");
 	}
 }
 
