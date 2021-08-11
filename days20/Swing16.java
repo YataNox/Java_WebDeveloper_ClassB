@@ -6,6 +6,7 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.ButtonGroup;
 import javax.swing.JFrame;
 import javax.swing.JRadioButton;
 
@@ -15,6 +16,7 @@ class JRadioButtonTest extends JFrame implements ActionListener
 	JRadioButton jrb2;
 	JRadioButton jrb3;
 	JRadioButton jrb4;
+	ButtonGroup bg;
 	
 	JRadioButtonTest()
 	{
@@ -22,6 +24,7 @@ class JRadioButtonTest extends JFrame implements ActionListener
 		jrb2 = new JRadioButton("골프");
 		jrb3 = new JRadioButton("글라이딩");
 		jrb4 = new JRadioButton("스쿠버");
+		bg = new ButtonGroup();
 		
 		Font f = new Font("굴림", Font.BOLD, 20);
 		jrb1.setFont(f);
@@ -32,10 +35,15 @@ class JRadioButtonTest extends JFrame implements ActionListener
 		Container con = getContentPane();
 		con.setLayout(new FlowLayout());
 		
+		bg.add(jrb1);
+		bg.add(jrb2);
+		bg.add(jrb3);
+		bg.add(jrb4);
 		con.add(jrb1);
 		con.add(jrb2);
 		con.add(jrb3);
 		con.add(jrb4);
+		
 		
 		jrb1.addActionListener(this);
 		jrb2.addActionListener(this);
