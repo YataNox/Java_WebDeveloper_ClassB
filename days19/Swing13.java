@@ -30,7 +30,7 @@ class Calculator extends JFrame	 implements ActionListener
 		// 컨테이너 및 패널 생성
 		Container con = getContentPane();
 		jt = new JTextField(16);
-		jt.setText("0");
+		jt.setText("0.0");
 		jt.setHorizontalAlignment(SwingConstants.RIGHT); // 텍스트 필드 오른쪽 정렬
 		jt.setEditable(false); //마우스 키보드로 편집할 수 없게 설정
 		
@@ -68,6 +68,9 @@ class Calculator extends JFrame	 implements ActionListener
 		JButton b5 = new JButton("=");
 		JButton b6 = new JButton("C");
 		JButton b7 = new JButton("◀");
+		JButton b8 = new JButton("sqr");
+		JButton b9 = new JButton("1/x");
+		JButton b10 = new JButton("%");
 		b1.setFont(f);
 		b2.setFont(f);
 		b3.setFont(f);
@@ -75,6 +78,10 @@ class Calculator extends JFrame	 implements ActionListener
 		b5.setFont(f);
 		b6.setFont(f);
 		b7.setFont(f);
+		b8.setFont(f);
+		b9.setFont(f);
+		b10.setFont(f);
+		
 		
 		// 각 레이아웃 위젯 추가
 		p1.add(jt);
@@ -95,6 +102,9 @@ class Calculator extends JFrame	 implements ActionListener
 		p5.add(b5);
 		p5.add(b4);
 		p6.add(b7);
+		p6.add(b8);
+		p6.add(b9);
+		p6.add(b10);
 		
 		con.add(p1);
 		con.add(p2);
@@ -120,44 +130,61 @@ class Calculator extends JFrame	 implements ActionListener
 		b5.addActionListener(this);
 		b6.addActionListener(this);
 		b7.addActionListener(this);
+		b8.addActionListener(this);
+		b9.addActionListener(this);
+		b10.addActionListener(this);
 		
 	}
 	public void actionPerformed(ActionEvent e) 
 	{
 		String s = e.getActionCommand();
 		// 초기화 버튼이나 연산 버튼을 제외한 버튼을 눌렀을 시 
-		if(!s.equals("C") && !s.equals("=") && !s.equals("◀"))
+		if(!s.equals("C") && !s.equals("=") && !s.equals("◀") && !s.equals("1/x") && !s.equals("sqr"))
 		{	
-			if(jt.getText().equals("-") && (s.equals("+") || s.equals("*") || s.equals("/")))
-				jt.setText("0");
+			if(jt.getText().equals("-") && (s.equals("+") || s.equals("*") || s.equals("/") || s.equals("%")))
+				jt.setText("0.0");
 			// 연산자 중복 입력 불가 처리
-			else if((jt.getText().endsWith("+") || jt.getText().endsWith("-") || jt.getText().endsWith("*") || jt.getText().endsWith("/")) 
-					&& (s.equals("+") || s.equals("-") || s.equals("*") || s.equals("/")))
+			else if((jt.getText().endsWith("+") || jt.getText().endsWith("-") || jt.getText().endsWith("*") || jt.getText().endsWith("/") || jt.getText().endsWith("%")) 
+					&& (s.equals("+") || s.equals("-") || s.equals("*") || s.equals("/") || s.equals("%")))
 				jt.setText(jt.getText().substring(0, jt.getText().length()-1) + s);
 			// 그 외 값은 정상 입력
 			else
 			{
 				// 첫 입력 값이 +*/이 아닐 경우 초기 0제거하고 입력
-				if(jt.getText().equals("0") && !(s.equals("+") || s.equals("*") || s.equals("/")))
+				if(jt.getText().equals("0.0") && !(s.equals("+") || s.equals("*") || s.equals("/") || s.equals("%")))
 					jt.setText(s);
 				else
 					jt.setText(jt.getText() + s);
 			}	
 		}
+		if(s.equals("sqr"))
+		{
+			double i = Math.sqrt(Double.parseDouble(jt.getText()));
+			jt.setText(Double.toString(i));
+		}
+		if(s.equals("1/x"))
+		{
+			double i = Double.parseDouble(jt.getText());
+			jt.setText(Double.toString(1/i));
+		}
 		// 백스페이스 버튼
 		if(s.equals("◀"))
 		{
 			jt.setText(jt.getText().substring(0, jt.getText().length()-1));
+			if(jt.getText().equals(""))
+			{
+				jt.setText("0.0");
+			}
 		}
 		// 초기화 버튼
 		else if(s.equals("C"))
 		{
-			jt.setText("0");
+			jt.setText("0.0");
 		}
 		// 연산 버튼
 		else if(s.equals("="))
 		{
-			StringTokenizer st = new StringTokenizer(jt.getText(),"+-*/", true);
+			StringTokenizer st = new StringTokenizer(jt.getText(),"+-*/%", true);
 			int c = 0;
 			double sum = 0;
 			String [] num = new String[st.countTokens()];
@@ -173,9 +200,7 @@ class Calculator extends JFrame	 implements ActionListener
 				for(int i = 0; i < num.length; i++)
 				{
 					if(i % 2 == 0 && i == 0)
-					{
 						sum -= Double.parseDouble(num[1]);
-					}
 					else if(i % 2 == 0)
 					{
 						if(num[i].equals("+"))
@@ -186,6 +211,8 @@ class Calculator extends JFrame	 implements ActionListener
 							sum *= Double.parseDouble(num[i+1]);
 						if(num[i].equals("/"))
 							sum /= Double.parseDouble(num[i+1]);
+						if(num[i].equals("%"))
+							sum %= Double.parseDouble(num[i+1]);
 					}
 				}
 			}
@@ -195,9 +222,7 @@ class Calculator extends JFrame	 implements ActionListener
 				for(int i = 0; i < num.length; i++)
 				{
 					if(i % 2 == 0 && i == 0)
-					{
 						sum += Double.parseDouble(num[0]);
-					}
 					else if(i % 2 == 0 && i != 0)
 					{
 						if(num[i-1].equals("+"))
@@ -208,6 +233,8 @@ class Calculator extends JFrame	 implements ActionListener
 							sum *= Double.parseDouble(num[i]);
 						if(num[i-1].equals("/"))
 							sum /= Double.parseDouble(num[i]);
+						if(num[i-1].equals("%"))
+							sum %= Double.parseDouble(num[i]);
 					}
 				}
 			}
