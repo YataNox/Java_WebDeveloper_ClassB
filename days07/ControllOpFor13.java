@@ -20,7 +20,7 @@ public class ControllOpFor13
 			start = num1;
 		else 
 			start = num2;
-		i / (i/start)
+
 		for(int i = start; i <= num1*num2; i++)
 			if(i % num1 == 0 && i%num2 == 0) 
 			{

@@ -60,6 +60,7 @@ class Calculator extends JFrame	 implements ActionListener
 		JButton b5 = new JButton("=");
 		JButton b6 = new JButton("C");
 		
+		// 각 레이아웃 위젯 추가
 		p1.add(jt);
 		p2.add(btn[7]);
 		p2.add(btn[8]);
