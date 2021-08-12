@@ -149,7 +149,7 @@ class Resume extends JFrame implements ActionListener{
 	}
 	
 }
-public class Swing18 {
+public class Swing18Tver {
 
 	public static void main(String[] args) {
 		new Resume();
