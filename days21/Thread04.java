@@ -52,8 +52,10 @@ public class Thread04
 		// Runnable 인터페이스를 구현한 쓰레드 생성
 		// 1. Runnable 인터페이스를 구현한 클래스의 객체 생성
 		ThreadD1 t1 = new ThreadD1();
+		
 		// 2. 1에서 생성된 객체를 Thread 생성자에 전달 인수로 전달하며 Thread 객체 생성
 		Thread t = new Thread(t1);
+		
 		// 3. 2에서 생성된 Thread 객체를 사용하여 start 메소드 호출
 		t.start();
 		
