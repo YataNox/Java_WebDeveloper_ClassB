@@ -21,7 +21,7 @@ import javax.swing.JTextField;
 // 실행화면과 같이 화면을 구성해주세요
 // 확인 버튼을 클릭하면 입력 내용이 콘솔창에 나란히 표시되도록 해주세요
 // 클래스 이름은 Resume 입니다
-class Resume extends JFrame implements ActionListener{
+class Resume1 extends JFrame implements ActionListener{
 
 	JTextField jt_name;
 	JRadioButton jr1;
@@ -35,7 +35,7 @@ class Resume extends JFrame implements ActionListener{
 	JTextField jt_phone3;
 	JComboBox<String> jcb2;
 	
-	Resume(){
+	Resume1(){
 		Font f = new Font("굴림", Font.BOLD, 20);
 		Container con = getContentPane();   // 메인 컨테이너
 		con.setLayout(new BorderLayout());
@@ -152,7 +152,7 @@ class Resume extends JFrame implements ActionListener{
 public class Swing18Tver {
 
 	public static void main(String[] args) {
-		new Resume();
+		new Resume1();
 	}
 
 }

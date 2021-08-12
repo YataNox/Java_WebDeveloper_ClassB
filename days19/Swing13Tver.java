@@ -1,4 +1,4 @@
-package days20;
+package days19;
 
 import java.awt.Container;
 import java.awt.FlowLayout;
@@ -19,7 +19,7 @@ import javax.swing.SwingConstants;
 // 3 행 : JPanel p3 배치 -> p3 에는 GridLayout 으로 버튼 네개( 4, 5, 6, -)
 // 4 행 : JPanel p4 배치 -> p4 에는 GridLayout 으로 버튼 네개( 1, 2, 3, x)
 // 5 행 : JPanel p5 배치 -> p5 에는 GridLayout 으로 버튼 네개( C, 0, =, ÷)
-class Calculator extends JFrame implements ActionListener{
+class Calculator1 extends JFrame implements ActionListener{
 	
 	JTextField jt;
 	int firstNumber;
@@ -28,7 +28,7 @@ class Calculator extends JFrame implements ActionListener{
 	double result2;
 	int operator=0;
 	
-	Calculator(){
+	Calculator1(){
 		jt = new JTextField(15);
 		Font f = new Font("굴림", Font.BOLD, 20); // 폰트 객체 생성.
 		jt.setFont(f); // 텍스트 필드에 폰트 적용
@@ -211,7 +211,7 @@ class Calculator extends JFrame implements ActionListener{
 public class Swing13Tver {
 
 	public static void main(String[] args) {
-		new Calculator();
+		new Calculator1();
 	}
 
 }
