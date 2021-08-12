@@ -41,11 +41,17 @@ public class IO03
 		for(i = size_1 - 3, m = 1; i >= 0; i--, m*=10)
 		{
 			n1 += ((firstNumber[i] - '0') * m);
+			//System.out.println(n1);
+			System.out.printf("firstNumber[%d]-%d \t", i, firstNumber[i]-'0');
+			System.out.printf("%d x %d => %d\t", firstNumber[i]-'0',m,(firstNumber[i]-'0')*m);
 			System.out.println(n1);
 		}
 		for(i = size_2 - 3, m = 1; i >= 0; i--, m*=10)
 		{
 			n2 += ((secondNumber[i] - '0') * m);
+			// System.out.println(n2);
+			System.out.printf("secondNumber[%d]-%d \t", i, secondNumber[i]-'0');
+			System.out.printf("%d x %d => %d \t", secondNumber[i]-'0',m,(secondNumber[i]-'0')*m);
 			System.out.println(n2);
 		}
 		System.out.println(n1+n2);
