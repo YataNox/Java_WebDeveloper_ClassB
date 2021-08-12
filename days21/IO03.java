@@ -19,6 +19,12 @@ public class IO03
 		
 		// 입력한 글자들외에 데이터의 끝을 표시하는 글자와 입력한 엔터까지 저장되어서 \0\n
 		// 배열에 저장된 데이터 갯수 + 2개의 size가 출력됩니다.
-		System.out.println(size_1 + " " + size_2);
+		System.out.println(size_1);
+		for(int i = 0; i < firstNumber.length; i++)
+			System.out.printf("%c", (char)firstNumber[i]);
+		System.out.println();
+		System.out.println(size_2);
+		for(int i = 0; i < secondNumber.length; i++)
+			System.out.printf("%c", (char)secondNumber[i]);
 	}
 }
