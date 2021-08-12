@@ -15,10 +15,70 @@ package days21;
 // 2. Runnable 인터페이스를 implements(구현)하는 방법
 // 		2-1. Thread 클래스를 상속하는 방법과 같고 효과도 거의 같습니다.
 
+class ThreadB1 extends Thread
+{
+	public void run()
+	{
+		for(int i = 0; i <= 10; i++)
+		{
+			System.out.printf("ThreadB1 : i -> %d\n", i);
+			try 
+			{
+				sleep(300); // 0.3초간 실행을 멈추라는 명령
+				// sleep 메소드를 Thread 클래스에 있는 static 메소드입니다.
+				// 사용할 때 Thread.sleep()으로 사용해야하지만 현재 위치는 자기 자신의 클래스 내부이기도 함으로
+				// sleep()으로만 사용합니다. 또한 프로세서 실행에 관여하는 명령이라서 예외처리가 따라다닙니다.
+			}
+			catch(InterruptedException e)
+			{
+				e.printStackTrace();
+			}
+		}
+	}
+}
+
+class ThreadB2 extends Thread
+{
+	public void run()
+	{
+		for(int i = 0; i <= 10; i++)
+		{
+			System.out.printf("ThreadB2 : i -> %d\n", i);
+			try 
+			{
+				sleep(300); // 0.3초간 실행을 멈추라는 명령
+				// sleep 메소드를 Thread 클래스에 있는 static 메소드입니다.
+				// 사용할 때 Thread.sleep()으로 사용해야하지만 현재 위치는 자기 자신의 클래스 내부이기도 함으로
+				// sleep()으로만 사용합니다. 또한 프로세서 실행에 관여하는 명령이라서 예외처리가 따라다닙니다.
+			}
+			catch(InterruptedException e)
+			{
+				e.printStackTrace();
+			}
+		}
+	}
+}
+
 public class Thread02 
 {
 	public static void main(String[] args)
 	{
-		
+		ThreadB1 b1 = new ThreadB1();
+		ThreadB2 b2 = new ThreadB2();
+		//b1.run();
+		b1.start();
+		b2.start();
+		for(int i = 0; i <= 10; i++)
+		{
+			System.out.printf("main : i -> %d\n", i);
+			try
+			{
+				Thread.sleep(300);
+			}
+			catch(InterruptedException e)
+			{
+				e.printStackTrace();
+			}
+		}
 	}
 }
