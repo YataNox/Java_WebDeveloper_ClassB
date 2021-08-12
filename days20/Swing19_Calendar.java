@@ -181,7 +181,8 @@ class Calendars extends JFrame implements ActionListener
 	public void actionPerformed(ActionEvent e)
 	{
 		String s = e.getActionCommand();
-		
+		Calendar temp = Calendar.getInstance();
+		temp.set(year, month-1, 1);
 		switch(s)
 		{
 			// 확인 버튼 시 JTextField y와 JComboBox의 m의 값을 
@@ -192,23 +193,29 @@ class Calendars extends JFrame implements ActionListener
 				break;
 			// 이전달을 누를 시 현재 year와 month의 값을 알맞게 수정 시킨다.
 			case "이전달" :
-				if(month == 1)
+				temp.add(Calendar.MONTH, -1); // 이전달 계산
+				year = temp.get(Calendar.YEAR);; // 연도 추출
+				month = temp.get(Calendar.MONTH)+1; // 월 추출
+				/*if(month == 1)
 				{
 					year--; 
 					month = 12;
 				}
 				else
-					month--;
+					month--;*/
 				break;
 			// 다음달을 누를 시 현재 year와 month의 값을 알맞게 수정 시킨다.
 			case "다음달" :
-				if(month == 12)
+				temp.add(Calendar.MONTH, 1); // 이전달 계산
+				year = temp.get(Calendar.YEAR);; // 연도 추출
+				month = temp.get(Calendar.MONTH)+1; // 월 추출
+				/*if(month == 12)
 				{
 					year++;
 					month = 1;
 				}
 				else
-					month++;
+					month++;*/
 				break;
 		}
 		// 이후 달력의 출력을 새로 한다.
