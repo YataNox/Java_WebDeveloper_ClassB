@@ -1,5 +1,7 @@
 package days21;
 
+import javax.swing.JOptionPane;
+
 class ThreadC2 extends Thread
 {
 	private boolean state = true;
@@ -32,6 +34,10 @@ public class Thread07
 {
 	public static void main(String[] args)
 	{
-		
+		ThreadC2 t2 = new ThreadC2();
+		t2.start();
+		String input = JOptionPane.showInputDialog("정답을 입력하세요.");
+		t2.setState(false);
+		System.out.println("입력하신 값은 " + input + "입니다.");
 	}
 }
