@@ -208,7 +208,7 @@ class Calculator extends JFrame implements ActionListener{
 		}
 	}
 }
-public class Swing13 {
+public class Swing13Tver {
 
 	public static void main(String[] args) {
 		new Calculator();
