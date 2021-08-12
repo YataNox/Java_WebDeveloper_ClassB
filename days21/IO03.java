@@ -19,12 +19,28 @@ public class IO03
 		
 		// 입력한 글자들외에 데이터의 끝을 표시하는 글자와 입력한 엔터까지 저장되어서 \0\n
 		// 배열에 저장된 데이터 갯수 + 2개의 size가 출력됩니다.
-		System.out.println(size_1);
+		/*System.out.println(size_1);
 		for(int i = 0; i < firstNumber.length; i++)
 			System.out.printf("%c", (char)firstNumber[i]);
 		System.out.println();
 		System.out.println(size_2);
 		for(int i = 0; i < secondNumber.length; i++)
-			System.out.printf("%c", (char)secondNumber[i]);
+			System.out.printf("%c", (char)secondNumber[i]);*/
+		
+		// 165 입력했을 경우 firstNumber[0] = '1' firstNumber[1] = '6' firstNumber[2] = '5'
+		// ('5' - '0')*1 + ('6' - '6')*10 + ('1' -'1') * 100
+		int i, m, n1 = 0, n2 = 0; // i : 배열의 인덱스 m : 각 자리에 곱셈이 될 10의 지승
+		
+		for(i = size_1 - 3, m = 1; i >= 0; i--, m*=10)
+		{
+			n1 += ((firstNumber[i] - '0') * m);
+			System.out.println(n1);
+		}
+		for(i = size_2 - 3, m = 1; i >= 0; i--, m*=10)
+		{
+			n2 += ((secondNumber[i] - '0') * m);
+			System.out.println(n2);
+		}
+		System.out.println(n1+n2);
 	}
 }
