@@ -76,12 +76,12 @@ class Car implements Serializable
 		int d = Integer.valueOf(outTime.substring(8,10)) - Integer.valueOf (enterDateTime.substring(8,10));
 		int h = Integer.valueOf(outTime.substring(11,13)) - Integer.valueOf (enterDateTime.substring(11,13));
 		int mm = Integer.valueOf(outTime.substring(14,16)) - Integer.valueOf (enterDateTime.substring(14,16));
-		y = y * 365;
-		m = (m + y) * 30;
-		d = d + m;
-		d = d * 24;
-		h = d + h * 2000;
-		mm = ((mm / 10) * 400);
+		y = y * 365; // 년을 일로 치환
+		m = m * 30; // 월을 일로 치환
+		d = d + m + y; // 총 일 수 계산
+		d = d * 24; // 일 수 만큼 시간 치환
+		h = (d + h) * 2000; // 시간 차만큼 금액 합산 및 계산
+		mm = ((mm / 10) * 400); // 10분 단위의 가격 계산
 		System.out.printf("%d %d %d %d %d", y, m, d, h, mm);
 		return d + mm;
 	}
