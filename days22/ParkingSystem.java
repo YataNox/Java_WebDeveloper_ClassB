@@ -81,7 +81,7 @@ class Car implements Serializable
 		d = d + m;
 		d = d * 24 * 2000;
 		h = m - h;
-		mm = mm * 400;
+		mm = (mm * 400 / 10);
 		System.out.printf("%d %d %d %d %d", y, m, d, h, mm);
 		return d + mm;
 	}
