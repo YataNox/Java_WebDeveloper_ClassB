@@ -8,7 +8,7 @@ import java.io.IOException;
 
 public class IO09 
 {
-	public static void main(String[] args) throws FileNotFoundException
+	public static void main(String[] args) throws IOException
 	{
 		File dir = new File("C:\\Users\\USER\\Desktop\\JAVA_Programing_workspace\\temp");
 		if(!dir.exists())
