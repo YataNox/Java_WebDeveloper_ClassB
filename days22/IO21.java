@@ -43,7 +43,13 @@ public class IO21
 		
 		// 폴더에서 모든 파일 목록 불러옴
 		String[] f = dir.list();
-		for(String fn : f)
-			System.out.println(fn);
+		//for(String fn : f)
+		//	System.out.println(fn);
+		
+		// 파일 명들을 이용한 반복 실행문을 실행하여 입력한 파일만 대상으로 내용을 읽은 후 화면 출력
+		for(int i = 0; i < f.length; i++)
+		{
+			
+		}
 	}
 }
