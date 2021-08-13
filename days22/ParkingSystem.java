@@ -71,6 +71,8 @@ class Car implements Serializable
 		Date now2 = Calendar.getInstance().getTime();
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd_HH:mm");
 		String outTime = sdf.format(now2);
+		
+		// 흐른 시간 계산
 		int y = Integer.valueOf(outTime.substring(0,4)) - Integer.valueOf (enterDateTime.substring(0,4));
 		int m = Integer.valueOf(outTime.substring(5,7)) - Integer.valueOf (enterDateTime.substring(5,7));
 		int d = Integer.valueOf(outTime.substring(8,10)) - Integer.valueOf (enterDateTime.substring(8,10));
@@ -82,8 +84,8 @@ class Car implements Serializable
 		d = d * 24; // 일 수 만큼 시간 치환
 		h = (d + h) * 2000; // 시간 차만큼 금액 합산 및 계산
 		mm = ((mm / 10) * 400); // 10분 단위의 가격 계산
-		System.out.printf("%d %d %d %d %d", y, m, d, h, mm);
-		return d + mm;
+		//System.out.printf("%d %d %d %d %d", y, m, d, h, mm);
+		return h + mm;
 	}
 }
 
