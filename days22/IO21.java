@@ -72,6 +72,7 @@ public class IO21
 					ArrayList<CalculatorResult> list = (ArrayList<CalculatorResult>)ois.readObject();
 					for(int j = 0; j < list.size(); j++)
 						System.out.printf("%d. %s\n", j+1, list.get(j));
+					ois.close();
 				}
 			}
 		}
