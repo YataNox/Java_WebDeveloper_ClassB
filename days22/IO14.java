@@ -51,11 +51,17 @@ public class IO14
 		
 		BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(fileCopy));
 		
-		int data;
+		/*int data;
 		while((data = bis.read()) != -1)
 		{
 			bos.write(data);
-		}
+		}*/
+		
+		byte[] data = new byte[1024];
+		int size;
+		while((size = bis.read(data)) != -1)
+			bos.write(data, 0, size);
+		
 		bis.close();
 		bos.close();
 	}
