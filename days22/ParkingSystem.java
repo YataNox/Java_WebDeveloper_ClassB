@@ -1,10 +1,13 @@
 package days22;
 
 import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -57,6 +60,31 @@ class Car implements Serializable
 	{
 		this.enterDateTime = enterDateTime;
 	}
+	public int payCount()
+	{
+		// this. <- cars[k-1];
+		// 현재시간(출차시간) 생성(Calendar) - 입차시간 구하기 위한 동작
+		
+		// (출차시간 밀리초 - 입차시간 밀리초)/1000 -> 초(second) 단위로 주차시간 계산
+		// 주차비 계산 : 현재 시간을 출차 시간으로 하여 밀리초끼리의 뺄셈 연산 후 다시 시분초로 환산
+		// 시간 당 2000원, 10분당 400원
+		Date now2 = Calendar.getInstance().getTime();
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd_HH:mm");
+		String outTime = sdf.format(now2);
+		int y = Integer.valueOf(outTime.substring(0,4)) - Integer.valueOf (enterDateTime.substring(0,4));
+		int m = Integer.valueOf(outTime.substring(5,7)) - Integer.valueOf (enterDateTime.substring(5,7));
+		int d = Integer.valueOf(outTime.substring(8,10)) - Integer.valueOf (enterDateTime.substring(8,10));
+		int h = Integer.valueOf(outTime.substring(11,13)) - Integer.valueOf (enterDateTime.substring(11,13));
+		int mm = Integer.valueOf(outTime.substring(14,16)) - Integer.valueOf (enterDateTime.substring(14,16));
+		y = y * 365;
+		m = (m + y) * 30;
+		d = d + m;
+		d = d * 24 * 2000;
+		h = m - h;
+		mm = mm * 400;
+		System.out.printf("%d %d %d %d %d", y, m, d, h, mm);
+		return d + mm;
+	}
 }
 
 public class ParkingSystem 
@@ -64,7 +92,6 @@ public class ParkingSystem
 	public static void main(String[] args) throws ClassNotFoundException, IOException
 	{
 		Scanner sc = new Scanner(System.in);
-	
 		File dir = new File("D:\\JAVA02\\Java_se\\parking");
 		if(!dir.exists())
 			dir.mkdirs();
@@ -81,7 +108,7 @@ public class ParkingSystem
 			list = (ArrayList<Car>)ois.readObject();
 			ois.close();
 		}
-		
+
 		while(true)
 		{
 			System.out.printf("메뉴를 선택하세요>> ");
@@ -104,17 +131,72 @@ public class ParkingSystem
 			}
 		}
 		System.out.println("프로그램이 종료합니다.");
-	}
+		ObjectOutputStream oos = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(file)));
+		oos.writeObject(list); // 주차중인 차를 담고 있는 리스트를 파일에 저장
+		oos.close();
+	} 
 	private static void enterCar(ArrayList<Car> list)
 	{
+		// if문과 list.size()를 이용하여 현재 주차중인 차의 댓수가 10대이면 만차
+		// 더이상 주차 할 수 없습니다. 메세지와 함께 메소드 종료
+		if(list.size() == 10)
+		{
+			System.out.println("만차 ~ 더이상 주차할 수 없습니다.\n\n");
+			return;
+		}
+		// 차량 번호 입력
+		Scanner sc = new Scanner(System.in);
+		System.out.print("입차 : 차량번호를 입력하세요 : ");
+		String num = sc.nextLine();
 		
+		// Car 객체 생성 : 생성자를 이용한 멤버 변수 초기화 기능 실행
+		Car c = new Car(num);
+		// 리스트에 차량 추가
+		list.add(c);
 	}
 	private static void outCar(ArrayList<Car> list)
 	{
+		// 리스트 사이즈가 0이면 출차할 차가 없습니다. 라는 메시지와 함께 메소드 종료
+		if(list.size() == 0)
+		{
+			System.out.println("출차할 차가 없습니다.");
+			return;
+		}
+		// 차량 번호 입력(뒤 숫자 네자리만 입력)
+		System.out.println("출차할 차의 차량 번호 뒷자리 4자리를 입력하세요 : ");
+		Scanner sc = new Scanner(System.in);
+		String num = sc.nextLine();
+		Car[] cars = new Car[10]; // 중복된 차량 리스트를 담을 배열
+		for(int i = 0; i < list.size(); i++)
+			if(list.get(i).getCarNumber().indexOf(num) != -1)
+				// num 값이 현재 차의 번호의 일부로 존재 한다면
+				cars[i] = list.get(i); // 현재 차량의 저장되 리스트 주소값을 cars 배열의 같은 위치에 저장 
 		
+		if(cars.length == 0)
+		{
+			System.out.println("찾는 차량이 없습니다.");
+			return;
+		}
+		for(int i = 0; i < cars.length; i++)
+			if(cars[i] != null) // cars 배열값들중 널이 아닌것들만 화면에 번호와  함계 출력
+				System.out.println((i+1) + ". " + cars[i].toString());
+		
+		// 출력된 리스트(1개 이상)에서 출차할 차량의 순번 입력
+		System.out.println("출차할 차의 주차 순번을 입력하세요");
+		int k = sc.nextInt();
+		
+		// 요금 계산
+		int pay = cars[k-1].payCount(); // 요금 계산
+		// 요금 출력
+		System.out.println("주차 요금은 " + pay + "원입니다.");
+		// 출차
+		list.remove(k-1);
 	}
 	private static void prnCar(ArrayList<Car> list)
 	{
-		
+		System.out.println("주차 중인 차량 목록-------------------------------");
+		for(int i = 0; i < list.size(); i++)
+			System.out.println(list.get(i));
+		System.out.println("\n");
 	}
 }
