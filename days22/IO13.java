@@ -18,11 +18,11 @@ public class IO13
 		// 파일로부터 이진 데이터를 읽어올 수 있는 스트림 객체 생성
 		BufferedInputStream bis_binary = new BufferedInputStream(new FileInputStream(file_binary));
 		int input;
-		while((input = bis_binary.read() != -1))
+		/*while((input = bis_binary.read() != -1))
 			System.out.printf("%d ", input);
 		while((input = br_text.read() != -1))
 			System.out.printf("");
-		
+		*/
 		bis_binary.close();
 	}
 }

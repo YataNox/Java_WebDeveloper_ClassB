@@ -14,8 +14,8 @@ public class IO12
 		File file_binary = new File(dir, "binary_data_using_buffer.dat");
 		File file_text = new File(dir, "text_data_using_buffer.txt");
 		
-		FileOutputStream fis_binary = new FileOutputStream(file_binary);
-		BufferedWriter bw_text = new BufferedWriter(file_text);
+		//FileOutputStream fis_binary = new FileOutputStream(file_binary);
+	/*	BufferedWriter bw_text = new BufferedWriter(file_text);
 		
 		// 버퍼의 내용을 출력
 		// 버퍼에 출력된 데이터는 해당 스트림이 close 되거나 해당 스트림 객체에 대해서 flush 메소드가
@@ -30,6 +30,6 @@ public class IO12
 		bw_text.flush();
 		
 		bos_binary.close();
-		bw_text.close();
+		bw_text.close();*/
 	}
 }
