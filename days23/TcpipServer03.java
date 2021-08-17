@@ -21,7 +21,7 @@ class Sender extends Thread
 			// OutputStream o = socket.getOutputStream();
 			// out = new DataOutputStream(o);
 			out = new DataOutputStream(socket.getOutputStream());
-			name = "[" + socket.getInetAddress() + " : " + socket.getPort() + "]";
+			name = "[" + socket.getInetAddress() + " : " + socket.getPort() + "] : ";
 		} 
 		catch (IOException e) 
 		{
@@ -35,9 +35,10 @@ class Sender extends Thread
 		{
 			try 
 			{
-				//String message = sc.nextLine();
+				String message = sc.nextLine();
 				// out.writeUTF(name + message);
-				out.writeUTF(name + sc.nextLine()); // 화면에 입력한 내용을 만들어둔 말머리와 함께 전송
+				out.writeUTF(name + message); // 화면에 입력한 내용을 만들어둔 말머리와 함께 전송
+				System.out.println("[" + socket.getInetAddress() + " : " + socket.getPort() + "] : " + message);
 			}
 			catch (IOException e) 
 			{
