@@ -22,6 +22,18 @@ public class Network01
 		{
 			e.printStackTrace();
 		}
+		try
+		{
+			ip = InetAddress.getLocalHost(); // LocalHost : 내컴퓨터
+			System.out.println("getHostName() : " + ip.getHostName());
+			System.out.println("getHostAddress() : " + ip.getHostAddress());
+			// 로컬 호스트의 대표 아이피 : 127.0.0.1
+			// http://localhost		 http://127.0.0.1 	http://192.168.0.92
+		}
+		catch(UnknownHostException e)
+		{
+			e.printStackTrace();
+		}
 		
 	}
 }
