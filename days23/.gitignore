@@ -8,3 +8,6 @@
 /Sender.class
 /Receiver.class
 /TcpipClient03.class
+/MultiChatServer.class
+/MultiChatServer$ServerReceiver.class
+/MultiCharClient.class
