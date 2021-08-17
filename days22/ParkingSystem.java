@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -60,15 +61,38 @@ class Car implements Serializable
 	{
 		this.enterDateTime = enterDateTime;
 	}
-	public int payCount()
+	public int payCount() throws ParseException
 	{
 		// this. <- cars[k-1];
-		// 현재시간(출차시간) 생성(Calendar) - 입차시간 구하기 위한 동작
-		
+		// 현재시간(출차시간) 생성(Calendar) - 입차시간과의 차를 구하기 위한 동작
 		// (출차시간 밀리초 - 입차시간 밀리초)/1000 -> 초(second) 단위로 주차시간 계산
 		// 주차비 계산 : 현재 시간을 출차 시간으로 하여 밀리초끼리의 뺄셈 연산 후 다시 시분초로 환산
 		// 시간 당 2000원, 10분당 400원
-		Date now2 = Calendar.getInstance().getTime();
+		
+		// 강사님 코드-------------------------------------------------------------------
+		int pay = 0;
+		Calendar outTime = Calendar.getInstance();
+		
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd_HH:mm");
+		// 입차 시간(enterDateTime - Sting자료) sdf.parse로 Date형태로 전환
+		Date eT = sdf.parse(this.enterDateTime);
+		// 입차 시간 변수 생성(Calendar)
+		Calendar enterTime = Calendar.getInstance();
+		// Date 형태로 전환된 입차시간을 Calendar 형 변수에 세트
+		enterTime.setTime(eT);
+		
+		long dif = (outTime.getTimeInMillis() - enterTime.getTimeInMillis()) / 1000;
+		// 입차시간부터 출차시간까지의 차가 초단위로 변환되어서 dif변수에 저장
+		
+		int min = (int)(dif / 60.0);
+		int hour = (int)(min / 60.0);
+		pay = hour * 2000;
+		pay = pay + (((min % 60) / 10) * 400); // 시간 금액 + ((잔여분 금액) / 10)(10분단위 계산)
+		return pay;
+		
+		
+		// 혼자 생각해본 코드(오류 존재)---------------------------------------------------
+		/*Date now2 = Calendar.getInstance().getTime();
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd_HH:mm");
 		String outTime = sdf.format(now2);
 		
@@ -85,13 +109,13 @@ class Car implements Serializable
 		h = (d + h) * 2000; // 시간 차만큼 금액 합산 및 계산
 		mm = ((mm / 10) * 400); // 10분 단위의 가격 계산
 		//System.out.printf("%d %d %d %d %d", y, m, d, h, mm);
-		return h + mm;
+		return h + mm;*/
 	}
 }
 
 public class ParkingSystem 
 {
-	public static void main(String[] args) throws ClassNotFoundException, IOException
+	public static void main(String[] args) throws ClassNotFoundException, IOException, ParseException
 	{
 		Scanner sc = new Scanner(System.in);
 		File dir = new File("D:\\JAVA02\\Java_se\\parking");
@@ -114,7 +138,7 @@ public class ParkingSystem
 		while(true)
 		{
 			System.out.printf("메뉴를 선택하세요>> ");
-			System.out.println("1. 입차\t2. 출차\t3. 주차상황\t4. 종료");
+			System.out.println("1. 입차\t2. 출차\t3. 주차상황\t4. 종료\t");
 			System.out.printf("입력 : ");
 			int input = sc.nextInt();
 			if(input == 4)
@@ -130,6 +154,9 @@ public class ParkingSystem
 				case 3: 
 					prnCar(list);
 					break;
+				case 5:
+					for(int i = 0; i < list.size(); i++)
+						list.get(i).setEnterDateTime("2021-08-17_10:00");
 			}
 		}
 		System.out.println("프로그램이 종료합니다.");
@@ -156,7 +183,7 @@ public class ParkingSystem
 		// 리스트에 차량 추가
 		list.add(c);
 	}
-	private static void outCar(ArrayList<Car> list)
+	private static void outCar(ArrayList<Car> list) throws ParseException
 	{
 		// 리스트 사이즈가 0이면 출차할 차가 없습니다. 라는 메시지와 함께 메소드 종료
 		if(list.size() == 0)
