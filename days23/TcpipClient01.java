@@ -10,14 +10,14 @@ public class TcpipClient01
 {
 	public static void main(String[] args)
 	{
-		String serverIp = "192.168.0.70";
+		String serverIp = "192.168.0.92";
 		
 		try 
 		{
 			// Socket : 클라이언트가 연결을 요청하면 그를 수락해줄 역할의 하드웨어 또는 소프트웨어
 			// serverIp : 현재 서버의 클라이언트가 요청할 연결의 목적지 주소
 			// 7777 : 서버에서 관리할 연결의 그룹 번호
-			Socket s = new Socket(serverIp, 7777);
+			Socket s = new Socket(serverIp, 6666);
 			
 			// 연결이 성공하면 아래 문장을 실행. 실패하면 catch 구문 실행
 			InputStream in = s.getInputStream(); // 소켓에서 입력/출력 스트림을 전달받아 입출력도구로 사용
