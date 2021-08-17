@@ -10,7 +10,7 @@ public class TcpipClient01
 {
 	public static void main(String[] args)
 	{
-String serverIp = "192.168.0.92";
+		String serverIp = "192.168.0.70";
 		
 		try 
 		{
