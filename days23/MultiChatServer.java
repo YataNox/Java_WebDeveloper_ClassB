@@ -64,7 +64,7 @@ public class MultiChatServer
 			} 
 			finally
 			{
-				sendToAll("#" + name + "님이 나가셨씁니다.");
+				sendToAll("#" + name + "님이 나가셨습니다.");
 				clients.remove(name); // 해쉬맵에서 현재 사용자 삭제
 				System.out.println("[" + socket.getInetAddress() + " : " + socket.getPort() + "] 에서 접속을 종료하였습니다.");
 				System.out.println("현재 서버 접속자수는 " + clients.size() + "입니다.");
