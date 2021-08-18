@@ -11,3 +11,5 @@
 /MultiChatServer.class
 /MultiChatServer$ServerReceiver.class
 /MultiCharClient.class
+/MultiCharClient$ClientReceiver.class
+/MultiCharClient$ClientSender.class
