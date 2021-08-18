@@ -61,7 +61,17 @@ public class MultiCharClient
 		
 		public void run()
 		{
-			
+			while(in != null)
+			{
+				try
+				{
+					System.out.println(in.readUTF());
+				}
+				catch(IOException e)
+				{
+					System.out.println("Client Receving Message Error");
+				}
+			}
 		}
 	}
 	
@@ -75,8 +85,13 @@ public class MultiCharClient
 		String serverIp = "172.30.1.43";
 		try 
 		{
-			Socket s = new Socket(serverIp, 7777);
+			Socket s = new Socket(serverIp, 8888);
 			System.out.println("서버에 연결되었습니다.");
+			
+			ClientSender cs = new ClientSender(s, args[0]);
+			ClientReceiver cr = new ClientReceiver(s);
+			cs.start();
+			cr.start();
 		} 
 		catch (UnknownHostException e) 
 		{

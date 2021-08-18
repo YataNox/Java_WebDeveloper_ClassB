@@ -109,7 +109,7 @@ public class MultiChatServer
 		{
 			while(true)
 			{
-				ss = new ServerSocket(7777);
+				ss = new ServerSocket(8888);
 				System.out.println("서버가 시작되었습니다.");
 				s = ss.accept();
 				System.out.println("[" + s.getInetAddress() + " : " + s.getPort() + "] 에서 접속하였습니다.");
